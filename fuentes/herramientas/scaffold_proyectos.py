@@ -87,6 +87,40 @@ PROYECTOS = [
             ('healthtracker-objetivos.webp', 1543, 'Pantalla de metas de salud con el progreso de cada objetivo.', 'metas de salud'),
             ('healthtracker-descubrir.webp', 1543, 'Sección Descubre con artículos y rutinas de salud.', 'descubre'),
         ],
+        # ---- Lista de espera: la app todavia no esta publicada ----
+        'lista_espera': True,
+        # ---- Soporte: Apple EXIGE una URL de soporte funcional por app ----
+        'soporte': {
+            'intro': 'Escríbenos y te respondemos en menos de dos días hábiles. '
+                     'Si el problema es con un dato concreto, cuéntanos qué indicador es '
+                     'y desde qué versión te pasa.',
+            'faq': [
+                ('¿La aplicación funciona sin conexión?',
+                 'Sí. Todos tus registros se guardan en el dispositivo y puedes consultarlos y '
+                 'crearlos sin red. Si tienes cuenta, se sincronizan cuando vuelvas a conectarte.'),
+                ('¿Cómo exporto mi historial?',
+                 'Desde cada pestaña, con el botón de exportar: puedes generar un PDF o un CSV y '
+                 'compartirlo con la hoja nativa del sistema.'),
+                ('¿Cómo hago una copia de seguridad?',
+                 'En Ajustes → Datos puedes crear una copia completa en formato JSON. Guárdala '
+                 'fuera del teléfono: si desinstalas la app sin sincronizar, los datos locales se '
+                 'borran con ella.'),
+                ('¿Por qué un valor mío aparece fuera de rango si mi laboratorio dice que está bien?',
+                 'Los rangos se resuelven por dispositivo de medición, sexo y edad, y no todos los '
+                 'laboratorios usan los mismos cortes. Revisa que el examen esté registrado con su '
+                 'laboratorio correcto. Ante cualquier duda clínica, consulta a tu médico: la app '
+                 'no diagnostica.'),
+                ('¿Cómo cambio el idioma o las unidades?',
+                 'En Ajustes puedes elegir entre cinco idiomas y cambiar entre unidades métricas '
+                 'e imperiales. El cambio se aplica de inmediato, sin reiniciar.'),
+                ('¿Cómo activo el bloqueo con huella o rostro?',
+                 'En Ajustes → Seguridad. La verificación la hace tu sistema operativo; nosotros '
+                 'nunca vemos tus datos biométricos.'),
+                ('¿Cómo elimino todos mis datos?',
+                 'Puedes borrar registros uno a uno desde la app, o eliminar la cuenta completa '
+                 'desde Ajustes. Si prefieres que lo hagamos nosotros, escríbenos.'),
+            ],
+        },
         # ---- Datos para la parte legal de ESTA app ----
         'legal': {
             'trata_datos_personales': True,
@@ -170,6 +204,31 @@ PROYECTOS = [
             ('runforwin-mundos.webp', 1251, 'Selector de mundos temáticos del juego.', 'mundos'),
             ('runforwin-ruleta.webp', 1255, 'Ruleta diaria con premios de monedas y piezas por rareza.', 'ruleta diaria'),
         ],
+        'lista_espera': True,
+        'soporte': {
+            'intro': 'Escríbenos y te respondemos en menos de dos días hábiles. '
+                     'Si el juego se cierra o se queda trabado, dinos en qué mundo estabas y '
+                     'qué modelo de dispositivo usas.',
+            'faq': [
+                ('Perdí mi progreso, ¿se puede recuperar?',
+                 'No. El juego guarda todo en el dispositivo y no tiene cuenta ni copia en la '
+                 'nube, así que al desinstalarlo el progreso se pierde. Es el precio de no pedirte '
+                 'ningún dato personal.'),
+                ('¿Las monedas se pueden comprar con dinero real?',
+                 'No. Las monedas se ganan jugando, con la ruleta diaria y con los cofres. No hay '
+                 'compras dentro del juego y las monedas no tienen valor monetario real.'),
+                ('¿Cómo desbloqueo los otros mundos?',
+                 'Los mundos se van habilitando con el progreso. Ahora mismo hay dos disponibles y '
+                 'el resto llegarán en próximas actualizaciones.'),
+                ('No se escucha la música.',
+                 'Comprueba que el dispositivo no esté en silencio y que la música del personaje '
+                 'esté seleccionada en el editor. Cada personaje puede tener su propia pista.'),
+                ('¿El juego tiene publicidad?',
+                 'No. No hay anuncios, no hay rastreadores y no se recoge ningún dato personal.'),
+                ('¿Puedo jugar sin conexión?',
+                 'Sí, el juego funciona completamente sin red.'),
+            ],
+        },
         'legal': {
             'trata_datos_personales': False,
             'trata_sensibles': False,
@@ -244,6 +303,33 @@ PROYECTOS = [
             ('footcarbonprint-plan.webp', 1252, 'Plan de acción con las medidas ordenadas por reducción estimada de CO₂.', 'plan de acción'),
             ('footcarbonprint-retos.webp', 1256, 'Pantalla de logros y reto semanal con su recompensa en puntos.', 'retos y logros'),
         ],
+        'lista_espera': True,
+        'soporte': {
+            'intro': 'Escríbenos y te respondemos en menos de dos días hábiles. '
+                     'Si el resultado del test no te cuadra, cuéntanos qué módulo es y qué '
+                     'respondiste: casi siempre es un factor de emisión que hay que revisar.',
+            'faq': [
+                ('¿De dónde salen los números?',
+                 'De fuentes públicas y verificables: IPCC, EPA, GHG Protocol, DEFRA, ICAO y '
+                 'estudios revisados por pares. Cada factor tiene su referencia documentada. El '
+                 'factor de red eléctrica está calibrado por país.'),
+                ('¿Puedo repetir el test?',
+                 'Sí, y es lo recomendable: mensual, trimestral o anual. La app guarda el '
+                 'histórico para que veas tu evolución.'),
+                ('¿Por qué mi huella cambió sin que yo cambiara nada?',
+                 'Los factores de emisión se actualizan cuando los organismos publican versiones '
+                 'nuevas. Si eso pasa, el resultado puede moverse aunque tus respuestas sean las '
+                 'mismas.'),
+                ('El lector de facturas no reconoce mi recibo.',
+                 'Necesita buena luz y que los kWh se vean completos. Si tu comercializadora usa '
+                 'un formato poco común, escríbenos con una foto y lo añadimos.'),
+                ('¿Sirve para reportar la huella de mi empresa?',
+                 'No. Los resultados son estimaciones personales y no constituyen un inventario '
+                 'certificado ni valen para reporte regulatorio o corporativo.'),
+                ('¿Cómo elimino mi cuenta y mis datos?',
+                 'Desde Ajustes → Cuenta, o escribiéndonos a privacidad@iron-coding.art.'),
+            ],
+        },
         'legal': {
             'trata_datos_personales': True,
             'trata_sensibles': False,
@@ -326,6 +412,35 @@ PROYECTOS = [
             ('pituapp-mascota.webp', 1247, 'Ficha de una mascota con su línea de tiempo de vacunas, visitas y peso.', 'ficha e historial'),
             ('pituapp-reporte.webp', 1251, 'Reporte veterinario en PDF con condiciones, visitas, vacunas y plan de cuidados.', 'reporte veterinario'),
         ],
+        'lista_espera': True,
+        'soporte': {
+            'intro': 'Escríbenos y te respondemos en menos de dos días hábiles. '
+                     'Si es un problema con recordatorios, dinos qué sistema operativo y qué '
+                     'versión usas: casi siempre es un permiso del sistema.',
+            'faq': [
+                ('No me llegan los recordatorios.',
+                 'Revisa que las notificaciones estén permitidas para PituApp en los ajustes del '
+                 'sistema. En Android, además, hay que permitir las alarmas exactas; algunos '
+                 'fabricantes las restringen con sus ahorradores de batería.'),
+                ('¿Cómo hago una copia de seguridad?',
+                 'En Ajustes → Datos → Crear respaldo. Genera un archivo JSON con todo el '
+                 'historial y los documentos adjuntos. <strong>Hazlo con regularidad</strong>: '
+                 'PituApp no tiene servidor, así que un dispositivo perdido es un historial '
+                 'perdido.'),
+                ('Cambié de teléfono, ¿cómo paso mis datos?',
+                 'Crea un respaldo en el teléfono viejo, pásalo al nuevo y usa Ajustes → Datos → '
+                 'Restaurar. Puedes elegir entre reemplazar todo o combinar con lo que ya haya.'),
+                ('Compré la versión Pro y no aparece.',
+                 'Usa el botón de restaurar compras en Ajustes. Si sigue sin aparecer, escríbenos '
+                 'con el correo de la cuenta con la que compraste.'),
+                ('¿Cómo genero el reporte para el veterinario?',
+                 'Desde la ficha de la mascota, en el menú de opciones: puedes elegir el historial '
+                 'completo, solo las vacunas o un rango de fechas.'),
+                ('La app me avisó de una variación de peso, ¿debo preocuparme?',
+                 'Es un aviso informativo cuando la variación supera el 10 %, no un diagnóstico. '
+                 'Coméntalo con tu veterinario.'),
+            ],
+        },
         'legal': {
             'trata_datos_personales': True,
             'trata_sensibles': False,
@@ -503,9 +618,73 @@ def pagina_producto(p, i):
     if p['demo']:
         url, etiqueta = p['demo']
         acciones.append(f'<a class="cta cta--primary" href="{url}" target="_blank" rel="noopener noreferrer">{etiqueta}</a>')
-    acciones.append('<a class="cta" href="privacidad.html">privacidad()</a>')
-    acciones.append('<a class="cta" href="terminos.html">terminos()</a>')
+    if p.get('lista_espera'):
+        acciones.append('<a class="cta" href="#lista-espera">avisarme()</a>')
+    acciones.append('<a class="cta" href="soporte.html">soporte()</a>')
     bloque_acciones = '\n          '.join(acciones)
+
+    # Bloque de lista de espera: solo mientras la app no este publicada.
+    # Es la conversion principal de una ficha de producto sin lanzar.
+    lista = ''
+    if p.get('lista_espera'):
+        lista = f'''
+  <section class="section wrap" id="lista-espera" aria-labelledby="titulo-lista-{slug}">
+    <p class="eyebrow">// todavía no está publicada</p>
+    <h2 class="section__title" id="titulo-lista-{slug}">Te avisamos el día que salga.</h2>
+
+    <div class="lista-espera">
+      <div class="resultado resultado--ok" id="resultado-ok" hidden role="status">
+        <strong>listo()</strong>
+        <p>Te escribiremos a ese correo cuando {p['nombre']} esté disponible. Nada más.</p>
+      </div>
+      <div class="resultado resultado--error" id="resultado-error" hidden role="alert">
+        <strong>error()</strong>
+        <p>No pudimos registrar tu correo. Inténtalo de nuevo o escríbenos a
+           <a href="mailto:contacto@iron-coding.art">contacto@iron-coding.art</a>.</p>
+      </div>
+
+      <form class="form form--lista" action="../../suscribir.php" method="post" novalidate>
+        <input type="hidden" name="app" value="{slug}">
+
+        <div class="campo" id="campo-correo">
+          <label for="correo">tu correo</label>
+          <input type="email" id="correo" name="correo" required maxlength="180"
+                 autocomplete="email" placeholder="donde te avisamos"
+                 aria-describedby="error-correo">
+          <p class="campo__error" id="error-correo"></p>
+        </div>
+
+        <div class="campo" id="campo-acepto">
+          <div class="consentimiento">
+            <input type="checkbox" id="acepto" name="acepto" value="si" required
+                   aria-describedby="error-acepto">
+            <label for="acepto">
+              Autorizo a Iron-Coding a guardar mi correo con el único fin de avisarme del
+              lanzamiento de esta aplicación, conforme a la
+              <a href="../../pages/privacidad.html">política de privacidad</a>.
+            </label>
+          </div>
+          <p class="campo__error" id="error-acepto"></p>
+        </div>
+
+        <div class="trampa" aria-hidden="true">
+          <label for="pagina-web">No rellenar este campo</label>
+          <input type="text" id="pagina-web" name="pagina_web" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div>
+          <button type="submit" class="cta cta--primary">avisarme()</button>
+        </div>
+      </form>
+
+      <p class="lista-espera__nota">
+        Un solo correo, el del lanzamiento. Ni boletines ni reenvíos a terceros: puedes pedir
+        que te borremos cuando quieras escribiendo a
+        <a href="mailto:privacidad@iron-coding.art">privacidad@iron-coding.art</a>.
+      </p>
+    </div>
+  </section>
+'''
 
     galeria = '\n'.join(f'''        <figure>
           <img src="../../img/showcase/{img}" alt="{alt}" width="720" height="{h}" loading="lazy" decoding="async">
@@ -545,7 +724,7 @@ def pagina_producto(p, i):
       </div>
     </div>
   </article>
-
+{lista}
   <section class="section wrap" aria-labelledby="otros-{slug}">
     <p class="eyebrow">// seguir mirando</p>
     <h2 class="section__title" id="otros-{slug}">El resto del portafolio.</h2>
@@ -554,6 +733,88 @@ def pagina_producto(p, i):
 '''
     return (cabecera(prof, f"{p['nombre']} — Iron-Coding", p['resumen_corto'],
                      f'proyectos/{slug}/', 'proyectos')
+            + cuerpo + pie(prof)).replace(
+        '<script src="../../js/main.js" defer></script>',
+        '<script src="../../js/main.js" defer></script>\n<script src="../../js/formularios.js" defer></script>'
+        if p.get('lista_espera') else '<script src="../../js/main.js" defer></script>')
+
+
+# --------------------------------------------------------------------------
+# Soporte de la app — Apple lo exige para poder publicar
+# --------------------------------------------------------------------------
+
+def pagina_soporte(p):
+    slug, nombre, S = p['slug'], p['nombre'], p['soporte']
+    prof = 2
+
+    faq = '\n'.join(f'''      <h2 id="p{i}">{q}</h2>
+      <p>{a}</p>''' for i, (q, a) in enumerate(S['faq'], 1))
+
+    indice = '\n'.join(f'          <li><a href="#p{i}">{q}</a></li>'
+                       for i, (q, _) in enumerate(S['faq'], 1))
+
+    cuerpo = f'''
+{migas(prof, ('proyectos', '../index.html'), (nombre, 'index.html'), ('soporte', None))}
+  <section class="page-hero wrap">
+    <p class="eyebrow">// soporte · {slug}</p>
+    <h1>Soporte de {nombre}</h1>
+    <p class="page-hero__lead">{S['intro']}</p>
+  </section>
+
+  <section class="section wrap">
+    <div class="contacto-grid">
+      <div class="prose">
+        <div class="toc">
+          <p>// preguntas frecuentes</p>
+          <ol>
+{indice}
+          </ol>
+        </div>
+
+{faq}
+
+        <h2 id="mas">¿No está tu pregunta aquí?</h2>
+        <p>
+          Escríbenos a <a href="mailto:soporte@iron-coding.art">soporte@iron-coding.art</a> o
+          usa el <a href="../../pages/contacto.html">formulario de contacto</a>. Respondemos en
+          menos de dos días hábiles, en español o en inglés.
+        </p>
+      </div>
+
+      <aside class="contacto-info">
+        <h2>contacto_directo()</h2>
+        <dl>
+          <div>
+            <dt>Soporte de {nombre}</dt>
+            <dd><a href="mailto:soporte@iron-coding.art">soporte@iron-coding.art</a></dd>
+          </div>
+          <div>
+            <dt>Tiempo de respuesta</dt>
+            <dd>Menos de dos días hábiles</dd>
+          </div>
+          <div>
+            <dt>Idiomas</dt>
+            <dd>Español e inglés</dd>
+          </div>
+          <div>
+            <dt>Privacidad y datos</dt>
+            <dd><a href="mailto:privacidad@iron-coding.art">privacidad@iron-coding.art</a></dd>
+          </div>
+          <div>
+            <dt>Documentos</dt>
+            <dd>
+              <a href="privacidad.html">Privacidad</a> ·
+              <a href="terminos.html">Términos</a>
+            </dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+'''
+    return (cabecera(prof, f'Soporte de {nombre} — Iron-Coding',
+                     f'Ayuda, preguntas frecuentes y contacto de soporte de la aplicación {nombre}.',
+                     f'proyectos/{slug}/soporte.html', 'proyectos')
             + cuerpo + pie(prof))
 
 
@@ -997,6 +1258,7 @@ def pagina_indice(proyectos):
               <th scope="row"><a href="{p['slug']}/index.html">{p['nombre']}</a></th>
               <td><a href="{p['slug']}/privacidad.html">privacidad.html</a></td>
               <td><a href="{p['slug']}/terminos.html">terminos.html</a></td>
+              <td><a href="{p['slug']}/soporte.html">soporte.html</a></td>
             </tr>''' for p in proyectos)
 
     cuerpo = f'''
@@ -1022,8 +1284,10 @@ def pagina_indice(proyectos):
     <p class="eyebrow">// legal por aplicación</p>
     <h2 class="section__title" id="legal-proyectos">Documentos que pide cada tienda.</h2>
     <p style="color:var(--muted); max-width:62ch; margin-bottom:28px;">
-      Estas son las URL que se pegan en Google Play Console y App Store Connect. Los documentos
-      que cubren el sitio web y la empresa son otros: la
+      Estas son las URL que se pegan en Google Play Console y App Store Connect. La de soporte
+      es obligatoria en la App Store y tiene que ser una página real con un método de contacto:
+      un placeholder es motivo de rechazo. Los documentos que cubren el sitio web y la empresa
+      son otros: la
       <a href="../pages/privacidad.html" style="color:var(--red-glow)">política general</a> y los
       <a href="../pages/terminos.html" style="color:var(--red-glow)">términos generales</a>.
     </p>
@@ -1034,6 +1298,7 @@ def pagina_indice(proyectos):
             <th scope="col">Aplicación</th>
             <th scope="col">Privacidad</th>
             <th scope="col">Términos</th>
+            <th scope="col">Soporte</th>
           </tr>
         </thead>
         <tbody>
@@ -1095,6 +1360,8 @@ def main():
         escribir(os.path.join(base, 'privacidad.html'), pagina_privacidad(p),
                  args.forzar, args.listar, creados, saltados)
         escribir(os.path.join(base, 'terminos.html'), pagina_terminos(p),
+                 args.forzar, args.listar, creados, saltados)
+        escribir(os.path.join(base, 'soporte.html'), pagina_soporte(p),
                  args.forzar, args.listar, creados, saltados)
 
     verbo = 'Se crearían' if args.listar else 'Creados'

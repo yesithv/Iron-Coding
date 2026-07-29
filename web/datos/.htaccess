@@ -1,0 +1,10 @@
+# La lista de espera contiene datos personales: no puede servirse por web.
+# Apache 2.4
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+# Apache 2.2 (cPanel antiguos)
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+</IfModule>

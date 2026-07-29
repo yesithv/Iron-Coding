@@ -392,6 +392,32 @@ tr:last-child td { border-bottom: 0; }
   border-color: var(--red);
 }
 
+/* ---------- Lista de espera de un producto ------------------------------- */
+
+.lista-espera {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px;
+  max-width: 42rem;
+}
+
+.form--lista { gap: 20px; }
+
+.lista-espera__nota {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.lista-espera__nota a { color: var(--red-glow); }
+
+@media (max-width: 600px) {
+  .lista-espera { padding: 24px; }
+}
+
 /* =========================================================================
    Blog
    ========================================================================= */

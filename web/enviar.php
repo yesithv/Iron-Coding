@@ -65,7 +65,8 @@ $tipo    = campo('tipo', 60);
 $mensaje = campo('mensaje', 4000);
 $consent = campo('consentimiento', 10);
 
-$tipos_validos = array('App nueva', 'Evolucion', 'Consultoria', 'Diseno', 'Otro');
+// Debe coincidir con el <select> de pages/contacto.html
+$tipos_validos = array('Soporte', 'Sugerencia', 'Error', 'Prensa', 'Alianza', 'Otro');
 
 if ($nombre === '' || $mensaje === '' || $consent !== 'si') {
     volver('error');
