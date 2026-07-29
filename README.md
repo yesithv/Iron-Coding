@@ -25,23 +25,77 @@ web/                      ← esto es el sitio: lo que se sube a public_html
 ├── img/
 │   ├── apple-touch-icon.png
 │   └── showcase/         Capturas optimizadas a WebP
-└── pages/
-    ├── proyectos.html    Detalle de los cuatro productos
-    ├── blog.html         Índice del blog
-    ├── blog-plantilla.html   Plantilla para escribir un artículo
-    ├── nosotros.html
-    ├── contacto.html
-    ├── privacidad.html   BORRADOR — requiere revisión legal
-    └── terminos.html     BORRADOR — requiere revisión legal
+├── pages/                Páginas transversales del sitio
+│   ├── blog.html         Índice del blog
+│   ├── blog-plantilla.html   Plantilla para escribir un artículo
+│   ├── nosotros.html
+│   ├── contacto.html
+│   ├── privacidad.html   Política GENERAL del sitio · BORRADOR, requiere revisión legal
+│   └── terminos.html     Términos GENERALES del sitio · BORRADOR, requiere revisión legal
+└── proyectos/            Un directorio por producto
+    ├── index.html        Índice del portafolio
+    ├── health-tracker/
+    │   ├── index.html        Ficha del producto
+    │   ├── privacidad.html   Política de ESTA app (la URL que pide la tienda)
+    │   └── terminos.html     Términos de ESTA app
+    ├── run-for-win/      (misma estructura)
+    ├── footcarbonprint/  (misma estructura)
+    └── pituapp/          (misma estructura)
 
 fuentes/                  ← material de trabajo, NO se publica
 ├── capturas-originales/  PNG originales de cada app + enlace a su README
-└── iteraciones-diseno/   Exploraciones de identidad visual
+├── iteraciones-diseno/   Exploraciones de identidad visual
+└── herramientas/
+    └── scaffold_proyectos.py   Andamiaje de la sección de proyectos
 ```
 
 > El encabezado y el pie están duplicados en cada archivo HTML, porque el sitio
 > no tiene paso de compilación y por tanto no hay "includes". Si cambias un
 > enlace del menú o del pie, hay que cambiarlo en **todas** las páginas.
+
+## Dos niveles de documentos legales
+
+Esta separación es deliberada y responde a lo que exigen las tiendas:
+
+| Nivel | Dónde | Qué cubre |
+|---|---|---|
+| **General** | `pages/privacidad.html`<br>`pages/terminos.html` | El sitio web, el formulario de contacto y los principios comunes de la compañía. Aplica de forma supletoria a todo. |
+| **Por aplicación** | `proyectos/<slug>/privacidad.html`<br>`proyectos/<slug>/terminos.html` | Los datos, permisos, terceros y descargos concretos de **esa** app. **Es la URL que se pega en Google Play Console y App Store Connect.** Prevalece sobre la general para esa app. |
+
+Google Play y la App Store exigen una política de privacidad **por ficha de
+aplicación**, que describa exactamente lo que esa app recoge. Una política
+genérica de empresa es motivo frecuente de rechazo en revisión.
+
+Las URL que se registran en cada tienda quedan así:
+
+```
+https://iron-coding.art/proyectos/health-tracker/privacidad.html
+https://iron-coding.art/proyectos/run-for-win/privacidad.html
+https://iron-coding.art/proyectos/footcarbonprint/privacidad.html
+https://iron-coding.art/proyectos/pituapp/privacidad.html
+```
+
+## Cómo agregar un proyecto
+
+1. Abre `fuentes/herramientas/scaffold_proyectos.py`, copia un bloque de la
+   lista `PROYECTOS` y cambia los datos: `slug`, nombre, textos, capturas y la
+   sección `legal` (datos que trata, permisos, terceros y su descargo propio).
+2. Convierte sus capturas a WebP en `web/img/showcase/` (ver más abajo).
+3. Ejecuta el script:
+
+   ```bash
+   python3 fuentes/herramientas/scaffold_proyectos.py --listar   # ver qué haría
+   python3 fuentes/herramientas/scaffold_proyectos.py            # crear
+   ```
+
+4. Añade sus URL a `web/sitemap.xml` y, si quieres que salga en la portada,
+   una tarjeta en `web/index.html`.
+
+**El script nunca sobrescribe un archivo que ya existe**, así que se puede
+volver a ejecutar sin miedo: solo crea lo que falta. No es un paso de
+compilación — una vez generado el HTML, la fuente de verdad es el HTML, sobre
+todo en los textos legales, que se van a corregir a mano tras la revisión
+jurídica. `--forzar` regenera todo y descarta esas correcciones.
 
 ## Formulario de contacto
 

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Run For Win — Iron-Coding</title>
+<meta name="description" content="Editor de minifiguras y endless runner de tres carriles con jefes, economía de monedas y misiones.">
+<meta name="theme-color" content="#0a0a0c">
+<link rel="canonical" href="https://iron-coding.art/proyectos/run-for-win/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Iron-Coding">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://iron-coding.art/proyectos/run-for-win/">
+<meta property="og:title" content="Run For Win — Iron-Coding">
+<meta property="og:description" content="Editor de minifiguras y endless runner de tres carriles con jefes, economía de monedas y misiones.">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
+
+<link rel="preload" href="../../fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/pages.css">
+
+<script>document.documentElement.className = 'js';</script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">saltar_al_contenido()</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="../../index.html" aria-label="Iron-Coding, inicio">&lt;Iron<span class="tag">-Coding</span>/&gt;</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="nav-toggle__label">menu()</span>
+    </button>
+
+    <nav aria-label="Principal">
+      <ul class="navlinks" id="nav-menu">
+        <li><a href="../index.html" aria-current="page">Proyectos</a></li>
+        <li><a href="../../pages/blog.html">Blog</a></li>
+        <li><a href="../../pages/nosotros.html">Nosotros</a></li>
+        <li><a href="../../pages/contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <div class="wrap">
+    <p class="crumbs"><a href="../../index.html">inicio</a><span>/</span><a href="../index.html">proyectos</a><span>/</span>Run For Win</p>
+  </div>
+
+  <article class="proyecto wrap" style="border-top:0">
+    <div class="proyecto__head">
+      <p class="proyecto__index">proyectos[1]</p>
+    </div>
+    <h1 class="proyecto__titulo">Run For Win</h1>
+    <p class="proyecto__tagline">Editor de personajes de bloques y endless runner pseudo-3D con jefes de mundo. Dos experiencias dentro de la misma app.</p>
+
+    <div class="proyecto__grid">
+      <div class="proyecto__texto">
+        <p>El jugador diseña su minifigura —cara, peinado, torso, piernas, calzado, capa, ocho ranuras de accesorios y hasta la música de la partida— y luego sale a correr con ella por mundos temáticos en una vista de tres carriles. Al final de cada mundo espera un jefe con tres corazones, al que se vence esquivando sus ataques y embistiendo.</p>
+        <p>Alrededor de esos dos pilares hay una economía completa: monedas, ruleta diaria, cofres común y VIP, tienda de piezas por rareza, misiones rotativas y ranking local por mundo. Los personajes, mundos y jefes se dibujan por código, con formas y colores, no con imágenes: el juego pesa lo que pesa el motor.</p>
+
+        <ul class="proyecto__features">
+          <li><strong>Editor profundo</strong> — piel, ojos, boca, cejas, extras faciales, casco, torso, guantes, piernas, calzado, capa y ocho ranuras de accesorios.</li>
+          <li><strong>Personajes precargados</strong> agrupados por colección, que sirven de punto de partida y se pueden modificar.</li>
+          <li><strong>Motor Flame</strong> con perspectiva pseudo-3D, tres carriles, salto y deslizamiento, y tres zonas de dificultad progresiva.</li>
+          <li><strong>Peleas contra jefes</strong> temáticos al cierre de cada mundo.</li>
+          <li><strong>Economía y progresión</strong> — monedas, ruleta diaria, cofres, desbloqueo de piezas por rareza y misiones rotativas.</li>
+          <li><strong>Ocho mundos</strong> con paletas y jefes propios, dos disponibles y el resto bloqueados.</li>
+          <li><strong>Audio completo</strong> — efectos y música de fondo seleccionable por personaje.</li>
+        </ul>
+
+        <div class="ficha">
+          <dl>
+            <dt>Estado</dt>
+            <dd>Jugable, con demo web pública. Pendiente de publicación en tiendas.</dd>
+            <dt>Plataformas</dt>
+            <dd>Android, iOS y web</dd>
+            <dt>Stack</dt>
+            <dd>Flutter · Flame · flutter_bloc · Hive · go_router · get_it</dd>
+            <dt>Arquitectura</dt>
+            <dd>Clean Architecture por funcionalidad, con las tres capas en cada una</dd>
+          </dl>
+        </div>
+
+        <div class="proyecto__acciones">
+          <a class="cta cta--primary" href="https://yesithv.github.io/lego-custom-character/" target="_blank" rel="noopener noreferrer">jugar_demo()</a>
+          <a class="cta" href="privacidad.html">privacidad()</a>
+          <a class="cta" href="terminos.html">terminos()</a>
+        </div>
+      </div>
+
+      <div class="galeria">
+        <figure>
+          <img src="../../img/showcase/runforwin-partida.webp" alt="Partida en curso: el personaje corre por el carril central recogiendo monedas." width="720" height="1243" loading="lazy" decoding="async">
+          <figcaption>partida</figcaption>
+        </figure>
+        <figure>
+          <img src="../../img/showcase/runforwin-editor.webp" alt="Editor de personajes con las pestañas de cabeza, pelo, torso, piernas y accesorios." width="720" height="1245" loading="lazy" decoding="async">
+          <figcaption>editor</figcaption>
+        </figure>
+        <figure>
+          <img src="../../img/showcase/runforwin-mundos.webp" alt="Selector de mundos temáticos del juego." width="720" height="1251" loading="lazy" decoding="async">
+          <figcaption>mundos</figcaption>
+        </figure>
+        <figure>
+          <img src="../../img/showcase/runforwin-ruleta.webp" alt="Ruleta diaria con premios de monedas y piezas por rareza." width="720" height="1255" loading="lazy" decoding="async">
+          <figcaption>ruleta diaria</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <section class="section wrap" aria-labelledby="otros-run-for-win">
+    <p class="eyebrow">// seguir mirando</p>
+    <h2 class="section__title" id="otros-run-for-win">El resto del portafolio.</h2>
+    <a class="cta cta--primary" href="../index.html">ver_proyectos()</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__top">
+      <a class="brand" href="../../index.html">&lt;Iron<span class="tag">-Coding</span>/&gt;</a>
+      <nav class="site-footer__links" aria-label="Pie de página">
+        <a href="../index.html">Proyectos</a>
+        <a href="../../pages/blog.html">Blog</a>
+        <a href="../../pages/nosotros.html">Nosotros</a>
+        <a href="../../pages/contacto.html">Contacto</a>
+        <a href="../../pages/privacidad.html">Privacidad</a>
+        <a href="../../pages/terminos.html">Términos</a>
+      </nav>
+      <!-- PENDIENTE: reemplazar por los perfiles reales de Iron-Coding -->
+      <div class="site-footer__social">
+        <a href="https://www.linkedin.com/company/iron-coding" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/iron-coding" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.instagram.com/ironcoding" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© <span data-year>2026</span> Iron-Coding</span>
+      <span class="site-footer__loop">for (año = 2026; activo; año++)</span>
+      <span>iron-coding.art</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.js" defer></script>
+
+</body>
+</html>
