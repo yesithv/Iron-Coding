@@ -877,7 +877,7 @@ def pagina_prensa(p):
           <caption class="sr-only">Ficha técnica de {nombre}</caption>
           <tbody>
             <tr><th scope="row">Nombre</th><td>{p['marca_tienda']}</td></tr>
-            <tr><th scope="row">Desarrollador</th><td>Iron-Coding — <span class="pendiente">[RAZÓN SOCIAL]</span></td></tr>
+            <tr><th scope="row">Desarrollador</th><td>Iron-Coding (Yesith Valencia)</td></tr>
             <tr><th scope="row">Categoría</th><td>{R['categoria']}</td></tr>
             <tr><th scope="row">Plataformas</th><td>{p['ficha'][1][1]}</td></tr>
             <tr><th scope="row">Idiomas</th><td>{R['idiomas']}</td></tr>
@@ -1116,10 +1116,9 @@ def pagina_privacidad(p):
 {en_desarrollo}
       <h2 id="responsable">1. Quién responde por tus datos</h2>
       <p>
-        El responsable del tratamiento es <span class="pendiente">[RAZÓN SOCIAL COMPLETA]</span>,
-        NIT <span class="pendiente">[NIT]</span>, con domicilio en
-        <span class="pendiente">[DIRECCIÓN, CIUDAD, PAÍS]</span>, que opera bajo la marca
-        <strong>Iron-Coding</strong>.
+        El responsable del tratamiento es <strong>Yesith Valencia</strong>, persona natural,
+        con domicilio en <span class="pendiente">[DIRECCIÓN Y CIUDAD]</span>, Colombia, que
+        ejerce su actividad bajo la marca <strong>Iron-Coding</strong>.
       </p>
       <p>
         Para cualquier asunto sobre tus datos en esta aplicación escribe a
@@ -1182,8 +1181,8 @@ def pagina_privacidad(p):
       <p>
         Los datos que viven en tu dispositivo permanecen mientras tengas la aplicación instalada;
         al desinstalarla se eliminan con ella. Los datos sincronizados en nuestros servidores, si
-        los hay, se conservan mientras la cuenta esté activa y hasta
-        <span class="pendiente">[X DÍAS]</span> después de que pidas eliminarla.
+        los hay, se conservan mientras la cuenta esté activa y hasta <strong>30 días</strong>
+        después de que pidas eliminarla.
       </p>
 
       <h2 id="derechos">{n + 2}. Tus derechos</h2>
@@ -1322,10 +1321,9 @@ def pagina_terminos(p):
 
       <h2 id="quienes">2. Quién presta el servicio</h2>
       <p>
-        {nombre} es una aplicación de <span class="pendiente">[RAZÓN SOCIAL COMPLETA]</span>,
-        NIT <span class="pendiente">[NIT]</span>, con domicilio en
-        <span class="pendiente">[DIRECCIÓN, CIUDAD, PAÍS]</span>, que opera bajo la marca
-        <strong>Iron-Coding</strong>.
+        {nombre} es una aplicación de <strong>Yesith Valencia</strong>, persona natural, con
+        domicilio en <span class="pendiente">[DIRECCIÓN Y CIUDAD]</span>, Colombia, que ejerce
+        su actividad bajo la marca <strong>Iron-Coding</strong>.
       </p>
 
       <h2 id="licencia">3. Licencia de uso</h2>
@@ -1405,8 +1403,8 @@ def pagina_terminos(p):
 
       <h2 id="ley">12. Ley aplicable</h2>
       <p>
-        Estos términos se rigen por las leyes de <span class="pendiente">[PAÍS]</span>. Cualquier
-        controversia se someterá a los jueces de <span class="pendiente">[CIUDAD, PAÍS]</span>, sin
+        Estos términos se rigen por las leyes de <strong>Colombia</strong>. Cualquier
+        controversia se someterá a los jueces de <span class="pendiente">[CIUDAD]</span>, Colombia, sin
         perjuicio del fuero que corresponda de forma imperativa a las personas consumidoras en su
         lugar de residencia. Si una cláusula resultara inválida, las demás seguirán vigentes.
       </p>
