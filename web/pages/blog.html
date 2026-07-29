@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog — Iron-Coding</title>
+<meta name="description" content="Notas de Iron-Coding sobre desarrollo móvil multiplataforma, arquitectura local-first, diseño de producto e IA aplicada.">
+<meta name="theme-color" content="#0a0a0c">
+<link rel="canonical" href="https://iron-coding.art/pages/blog.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Iron-Coding">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://iron-coding.art/pages/blog.html">
+<meta property="og:title" content="Blog — Iron-Coding">
+<meta property="og:description" content="Notas sobre desarrollo móvil, arquitectura local-first y diseño de producto.">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<link rel="preload" href="../fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/pages.css">
+
+<script>document.documentElement.className = 'js';</script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">saltar_al_contenido()</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="../index.html" aria-label="Iron-Coding, inicio">&lt;Iron<span class="tag">-Coding</span>/&gt;</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="nav-toggle__label">menu()</span>
+    </button>
+
+    <nav aria-label="Principal">
+      <ul class="navlinks" id="nav-menu">
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <div class="wrap">
+    <p class="crumbs"><a href="../index.html">inicio</a><span>/</span>blog</p>
+  </div>
+
+  <section class="page-hero wrap">
+    <p class="eyebrow">// blog</p>
+    <h1>posts[]</h1>
+    <p class="page-hero__lead">
+      Notas de taller: decisiones de arquitectura, aprendizajes de construir para móvil y web
+      a la vez, y lo que hemos encontrado aplicando IA a productos reales.
+    </p>
+  </section>
+
+  <section class="section wrap" aria-labelledby="lista-posts">
+    <h2 class="sr-only" id="lista-posts">Publicaciones</h2>
+
+    <!-- ===================================================================
+         CÓMO AGREGAR UN ARTÍCULO
+         1. Copia pages/blog-plantilla.html y renómbralo:
+            blog-mi-articulo.html  (siempre con el prefijo "blog-")
+         2. Rellena el título, la fecha, el tiempo de lectura y el cuerpo.
+         3. Copia el bloque <article class="post-card"> de abajo, quítale
+            el comentario y ponlo aquí arriba (el más reciente primero).
+         4. Borra el bloque <div class="blog-vacio"> cuando haya al menos
+            un artículo publicado.
+         =================================================================== -->
+
+    <div class="blog-lista">
+
+      <!-- PLANTILLA DE TARJETA — descomentar y duplicar por cada artículo
+      <article class="post-card">
+        <p class="post-card__meta">2026-08-15 · 6 min de lectura</p>
+        <h2><a href="blog-mi-articulo.html">Título del artículo</a></h2>
+        <p>
+          Resumen de dos o tres líneas que explique de qué trata y por qué
+          le interesa a quien lo va a leer.
+        </p>
+      </article>
+      -->
+
+      <!-- Estado vacío: bórralo cuando publiques el primer artículo -->
+      <div class="blog-vacio">
+        <p class="blog-vacio__code">posts.length === 0</p>
+        <h2>Todavía no hay nada publicado</h2>
+        <p>
+          Estamos escribiendo los primeros artículos. Mientras tanto, el trabajo está
+          en <a href="proyectos.html" style="color:var(--red-glow)">proyectos</a>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__top">
+      <a class="brand" href="../index.html">&lt;Iron<span class="tag">-Coding</span>/&gt;</a>
+      <nav class="site-footer__links" aria-label="Pie de página">
+        <a href="proyectos.html">Proyectos</a>
+        <a href="blog.html">Blog</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="privacidad.html">Privacidad</a>
+        <a href="terminos.html">Términos</a>
+      </nav>
+      <!-- PENDIENTE: reemplazar por los perfiles reales de Iron-Coding -->
+      <div class="site-footer__social">
+        <a href="https://www.linkedin.com/company/iron-coding" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/iron-coding" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.instagram.com/ironcoding" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© <span data-year>2026</span> Iron-Coding</span>
+      <span class="site-footer__loop">for (año = 2026; activo; año++)</span>
+      <span>iron-coding.art</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js" defer></script>
+
+</body>
+</html>

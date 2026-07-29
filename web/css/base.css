@@ -334,6 +334,21 @@ body::before {
 .site-footer__links a:hover,
 .site-footer__links a:focus-visible { color: var(--red-glow); }
 
+.site-footer__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+}
+
+.site-footer__social a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.site-footer__social a:hover,
+.site-footer__social a:focus-visible { color: var(--violet); }
+
 .site-footer__bottom {
   display: flex;
   flex-wrap: wrap;

@@ -8,24 +8,64 @@ Se sirve tal cual desde el hosting compartido cPanel de GoDaddy.
 ```
 web/                      ← esto es el sitio: lo que se sube a public_html
 ├── index.html            Portada
+├── enviar.php            Manejador del formulario de contacto (solo cPanel)
 ├── .htaccess             Compresión, caché y MIME para Apache/cPanel
 ├── .nojekyll             Evita que GitHub Pages procese el sitio con Jekyll
+├── robots.txt
+├── sitemap.xml
 ├── favicon.svg
 ├── css/
 │   ├── base.css          Tokens de identidad, reset, nav y pie (todas las páginas)
-│   └── home.css          Solo la portada
+│   ├── home.css          Solo la portada
+│   └── pages.css         Páginas interiores
 ├── js/
-│   └── main.js           Menú móvil y año del pie. Sin dependencias.
+│   ├── main.js           Menú móvil y año del pie. Sin dependencias.
+│   └── contacto.js       Validación del formulario y mensaje de resultado
 ├── fonts/                JetBrains Mono y Manrope (variables, subconjunto latino)
 ├── img/
 │   ├── apple-touch-icon.png
 │   └── showcase/         Capturas optimizadas a WebP
-└── pages/                Resto de páginas del sitio
+└── pages/
+    ├── proyectos.html    Detalle de los cuatro productos
+    ├── blog.html         Índice del blog
+    ├── blog-plantilla.html   Plantilla para escribir un artículo
+    ├── nosotros.html
+    ├── contacto.html
+    ├── privacidad.html   BORRADOR — requiere revisión legal
+    └── terminos.html     BORRADOR — requiere revisión legal
 
 fuentes/                  ← material de trabajo, NO se publica
 ├── capturas-originales/  PNG originales de cada app + enlace a su README
 └── iteraciones-diseno/   Exploraciones de identidad visual
 ```
+
+> El encabezado y el pie están duplicados en cada archivo HTML, porque el sitio
+> no tiene paso de compilación y por tanto no hay "includes". Si cambias un
+> enlace del menú o del pie, hay que cambiarlo en **todas** las páginas.
+
+## Formulario de contacto
+
+`pages/contacto.html` envía por POST a `enviar.php`, que valida en el servidor,
+descarta el spam con un campo trampa y manda el mensaje con `mail()`. Tras
+enviar redirige a `pages/contacto.html?estado=ok` o `?estado=error`, y
+`js/contacto.js` muestra el aviso correspondiente.
+
+**El formulario solo funciona en cPanel**, que tiene PHP. En GitHub Pages, que
+sirve archivos estáticos, el envío devuelve 404.
+
+Antes de publicar hay que crear los buzones en cPanel → *Cuentas de correo* y
+ajustar `DESTINO` y `REMITENTE` al principio de `enviar.php`. `REMITENTE` tiene
+que ser una dirección del propio dominio: si se pone ahí el correo de quien
+escribe, los servidores lo tratan como suplantación y el mensaje acaba en spam.
+
+## Cómo agregar un artículo al blog
+
+1. Copia `pages/blog-plantilla.html` como `pages/blog-mi-articulo.html`.
+2. Borra la línea `<meta name="robots" content="noindex, nofollow">`.
+3. Rellena título, fecha, tiempo de lectura y cuerpo.
+4. En `pages/blog.html`, descomenta el bloque `<article class="post-card">`,
+   duplícalo para tu artículo y borra el bloque `blog-vacio`.
+5. Añade la URL nueva a `sitemap.xml`.
 
 ## Identidad visual
 

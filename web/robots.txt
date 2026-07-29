@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Plantilla interna, no es contenido publicable
+Disallow: /pages/blog-plantilla.html
+
+Sitemap: https://iron-coding.art/sitemap.xml
