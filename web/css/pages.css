@@ -254,7 +254,9 @@ tr:last-child td { border-bottom: 0; }
   padding: 3px 12px;
 }
 
-.proyecto h2 {
+/* h2 en el índice antiguo, h1 en la ficha propia de cada proyecto */
+.proyecto h2,
+.proyecto__titulo {
   font-family: var(--mono);
   font-size: clamp(1.6rem, 4vw, 2.4rem);
   font-weight: 800;

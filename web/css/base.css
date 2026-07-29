@@ -209,6 +209,120 @@ body::before {
   color: transparent;
 }
 
+/* ---------- Tarjetas de proyecto (portada e indice de proyectos) --------- */
+
+.projects {
+  display: grid;
+  gap: 20px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.project:hover,
+.project:focus-within {
+  border-color: var(--violet);
+  transform: translateY(-4px);
+}
+
+.project__shot {
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.project__shot img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.project__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 26px 28px 28px;
+}
+
+.project__index {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--violet);
+  margin-bottom: 10px;
+}
+
+.project__name {
+  font-family: var(--mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* El enlace cubre toda la tarjeta sin anidar interactivos */
+.project__name a {
+  text-decoration: none;
+  outline-offset: 4px;
+}
+
+.project__name a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.project { position: relative; }
+
+.project__desc {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.project__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.chip {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.chip--state {
+  color: var(--text);
+  border-color: var(--red);
+}
+
+.project__more {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 18px;
+  transition: color 0.25s ease;
+}
+
+.project:hover .project__more,
+.project:focus-within .project__more { color: var(--red-glow); }
+
+/* Rejilla flexible por defecto; la portada la sobrescribe para su
+   composicion de 3 columnas + destacado. */
+.projects { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
 /* ---------- Barra de navegación ------------------------------------------ */
 
 .site-header {

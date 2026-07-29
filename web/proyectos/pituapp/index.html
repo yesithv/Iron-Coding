@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PituApp — Iron-Coding</title>
+<meta name="description" content="Plan de cuidados e historial clínico de mascotas, con recordatorios y reporte veterinario en PDF.">
+<meta name="theme-color" content="#0a0a0c">
+<link rel="canonical" href="https://iron-coding.art/proyectos/pituapp/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Iron-Coding">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://iron-coding.art/proyectos/pituapp/">
+<meta property="og:title" content="PituApp — Iron-Coding">
+<meta property="og:description" content="Plan de cuidados e historial clínico de mascotas, con recordatorios y reporte veterinario en PDF.">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
+
+<link rel="preload" href="../../fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/pages.css">
+
+<script>document.documentElement.className = 'js';</script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">saltar_al_contenido()</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="../../index.html" aria-label="Iron-Coding, inicio">&lt;Iron<span class="tag">-Coding</span>/&gt;</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="nav-toggle__label">menu()</span>
+    </button>
+
+    <nav aria-label="Principal">
+      <ul class="navlinks" id="nav-menu">
+        <li><a href="../index.html" aria-current="page">Proyectos</a></li>
+        <li><a href="../../pages/blog.html">Blog</a></li>
+        <li><a href="../../pages/nosotros.html">Nosotros</a></li>
+        <li><a href="../../pages/contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <div class="wrap">
+    <p class="crumbs"><a href="../../index.html">inicio</a><span>/</span><a href="../index.html">proyectos</a><span>/</span>PituApp</p>
+  </div>
+
+  <article class="proyecto wrap" style="border-top:0">
+    <div class="proyecto__head">
+      <p class="proyecto__index">proyectos[3]</p>
+    </div>
+    <h1 class="proyecto__titulo">PituApp</h1>
+    <p class="proyecto__tagline">PetBienestar — el cuidado de tu mascota, siempre al día. Vacunas, desparasitaciones, visitas y peso en un solo historial.</p>
+
+    <div class="proyecto__grid">
+      <div class="proyecto__texto">
+        <p>Quien cuida un animal lleva las fechas en la cabeza o en un cuaderno: la desparasitación cada cuatro meses, la vacuna anual, el control de peso mensual. PituApp convierte eso en un plan de cuidados que se recalcula solo cada vez que se marca algo como hecho, y avisa antes de que venza.</p>
+        <p>Lo que la separa de una lista de tareas es el historial clínico: visitas médicas, vacunas con su próxima dosis autosugerida, diagnósticos con estado y registro de peso con aviso informativo cuando la variación supera el 10 %. Todo eso se exporta a un reporte veterinario en PDF listo para llevar a la consulta.</p>
+
+        <ul class="proyecto__features">
+          <li><strong>Varias mascotas</strong> con archivado que detiene los recordatorios pero conserva el historial.</li>
+          <li><strong>Catálogo de cuidados por especie</strong> precargado, con frecuencias editables y cuidados personalizados.</li>
+          <li><strong>Historial clínico integrado</strong> en una línea de tiempo con filtros por tipo y rango de fechas.</li>
+          <li><strong>Documentos adjuntos</strong> con galería, filtro por tipo y compresión automática de imágenes.</li>
+          <li><strong>Recordatorios locales</strong> del día, vencidos y anticipados, respetando el límite de notificaciones de iOS.</li>
+          <li><strong>Reporte veterinario en PDF</strong> con selección de contenido y hoja de compartir nativa.</li>
+          <li><strong>Respaldo y portabilidad</strong> — exportar e importar en JSON, con opción de reemplazar o combinar.</li>
+        </ul>
+
+        <div class="ficha">
+          <dl>
+            <dt>Estado</dt>
+            <dd>MVP de fase 1 funcionalmente completo, con demo web pública. Pendiente el cifrado en reposo y la publicación en tiendas.</dd>
+            <dt>Plataformas</dt>
+            <dd>Android, iOS y web</dd>
+            <dt>Stack</dt>
+            <dd>Flutter · Riverpod · Clean Architecture con patrón repositorio</dd>
+            <dt>Datos</dt>
+            <dd>Local-first, sin backend. Preparado para sincronizar en la fase 2 sin migraciones destructivas</dd>
+          </dl>
+        </div>
+
+        <div class="proyecto__acciones">
+          <a class="cta cta--primary" href="https://yesithv.github.io/pitu-app/" target="_blank" rel="noopener noreferrer">probar_demo()</a>
+          <a class="cta" href="privacidad.html">privacidad()</a>
+          <a class="cta" href="terminos.html">terminos()</a>
+        </div>
+      </div>
+
+      <div class="galeria">
+        <figure>
+          <img src="../../img/showcase/pituapp-mascota.webp" alt="Ficha de una mascota con su línea de tiempo de vacunas, visitas y peso." width="720" height="1247" loading="lazy" decoding="async">
+          <figcaption>ficha e historial</figcaption>
+        </figure>
+        <figure>
+          <img src="../../img/showcase/pituapp-reporte.webp" alt="Reporte veterinario en PDF con condiciones, visitas, vacunas y plan de cuidados." width="720" height="1251" loading="lazy" decoding="async">
+          <figcaption>reporte veterinario</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <section class="section wrap" aria-labelledby="otros-pituapp">
+    <p class="eyebrow">// seguir mirando</p>
+    <h2 class="section__title" id="otros-pituapp">El resto del portafolio.</h2>
+    <a class="cta cta--primary" href="../index.html">ver_proyectos()</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__top">
+      <a class="brand" href="../../index.html">&lt;Iron<span class="tag">-Coding</span>/&gt;</a>
+      <nav class="site-footer__links" aria-label="Pie de página">
+        <a href="../index.html">Proyectos</a>
+        <a href="../../pages/blog.html">Blog</a>
+        <a href="../../pages/nosotros.html">Nosotros</a>
+        <a href="../../pages/contacto.html">Contacto</a>
+        <a href="../../pages/privacidad.html">Privacidad</a>
+        <a href="../../pages/terminos.html">Términos</a>
+      </nav>
+      <!-- PENDIENTE: reemplazar por los perfiles reales de Iron-Coding -->
+      <div class="site-footer__social">
+        <a href="https://www.linkedin.com/company/iron-coding" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/iron-coding" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.instagram.com/ironcoding" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© <span data-year>2026</span> Iron-Coding</span>
+      <span class="site-footer__loop">for (año = 2026; activo; año++)</span>
+      <span>iron-coding.art</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.js" defer></script>
+
+</body>
+</html>

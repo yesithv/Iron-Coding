@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Health Tracker — Iron-Coding</title>
+<meta name="description" content="Seguimiento de indicadores de salud con interpretación clínica, historiales con gráficas y exportación a PDF.">
+<meta name="theme-color" content="#0a0a0c">
+<link rel="canonical" href="https://iron-coding.art/proyectos/health-tracker/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Iron-Coding">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://iron-coding.art/proyectos/health-tracker/">
+<meta property="og:title" content="Health Tracker — Iron-Coding">
+<meta property="og:description" content="Seguimiento de indicadores de salud con interpretación clínica, historiales con gráficas y exportación a PDF.">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
+
+<link rel="preload" href="../../fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/pages.css">
+
+<script>document.documentElement.className = 'js';</script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">saltar_al_contenido()</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="../../index.html" aria-label="Iron-Coding, inicio">&lt;Iron<span class="tag">-Coding</span>/&gt;</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="nav-toggle__label">menu()</span>
+    </button>
+
+    <nav aria-label="Principal">
+      <ul class="navlinks" id="nav-menu">
+        <li><a href="../index.html" aria-current="page">Proyectos</a></li>
+        <li><a href="../../pages/blog.html">Blog</a></li>
+        <li><a href="../../pages/nosotros.html">Nosotros</a></li>
+        <li><a href="../../pages/contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <div class="wrap">
+    <p class="crumbs"><a href="../../index.html">inicio</a><span>/</span><a href="../index.html">proyectos</a><span>/</span>Health Tracker</p>
+  </div>
+
+  <article class="proyecto wrap" style="border-top:0">
+    <div class="proyecto__head">
+      <p class="proyecto__index">proyectos[0]</p>
+      <p class="proyecto__flag">producto insignia</p>
+    </div>
+    <h1 class="proyecto__titulo">Health Tracker</h1>
+    <p class="proyecto__tagline">El paciente registra sus indicadores de salud y los ve interpretados contra rangos clínicos reales, no contra una tabla genérica.</p>
+
+    <div class="proyecto__grid">
+      <div class="proyecto__texto">
+        <p>La mayoría de aplicaciones de salud guardan números. Health Tracker los <strong>interpreta</strong>: cada valor se contrasta con bandas clínicas administradas en el servidor y resueltas por dispositivo de medición, sexo y edad, y se presenta con un semáforo de estado. Un perfil lipídico se lee con los rangos del laboratorio donde se tomó el examen, porque no todos los laboratorios usan los mismos cortes.</p>
+        <p>Es local-first de verdad: todo se guarda en SQLite en el dispositivo y la app es plenamente usable sin red. La sincronización con la API es bidireccional y solo marca un registro como sincronizado si el servidor confirma, de modo que un fallo de red nunca pierde datos.</p>
+
+        <ul class="proyecto__features">
+          <li><strong>Cuatro familias de indicadores</strong> signos vitales, antropometría con seis perímetros corporales, perfil lipídico y composición corporal.</li>
+          <li><strong>Semáforo clínico</strong> por indicador, con cortes de fábrica como respaldo cuando no hay red.</li>
+          <li><strong>Historiales con gráficas</strong> de evolución y bandas de referencia dibujadas sobre la curva.</li>
+          <li><strong>Exportación a PDF y CSV</strong> con compartido nativo desde cada pestaña.</li>
+          <li><strong>Cinco idiomas</strong> (español, inglés, portugués, italiano y alemán) y unidades métricas o imperiales.</li>
+          <li><strong>Dos temas completos</strong> — Pulso Clínico y Consulta Serena — sobre un vocabulario de tokens semánticos.</li>
+          <li><strong>Copia de seguridad</strong> completa en JSON, biometría opcional y recordatorios diarios.</li>
+        </ul>
+
+        <div class="ficha">
+          <dl>
+            <dt>Estado</dt>
+            <dd>Versión 0.1.0 · Fase 0. Funcionalmente completa de punta a punta; quedan por sustituir los andamios de autenticación.</dd>
+            <dt>Plataformas</dt>
+            <dd>Android y web ejercitados; iOS, Linux, macOS y Windows compilables.</dd>
+            <dt>Stack</dt>
+            <dd>Flutter · Dart · SQLite (sqflite) · provider · go_router · fl_chart</dd>
+            <dt>Backend</dt>
+            <dd>HealthTracker-Api, fuente de verdad de los rangos clínicos</dd>
+            <dt>Calidad</dt>
+            <dd>16 archivos de prueba, incluido un contrato semántico que falla la compilación si un tema baja del contraste AA</dd>
+          </dl>
+        </div>
+
+        <div class="proyecto__acciones">
+          <a class="cta" href="privacidad.html">privacidad()</a>
+          <a class="cta" href="terminos.html">terminos()</a>
+        </div>
+      </div>
+
+      <div class="galeria">
+        <figure>
+          <img src="../../img/showcase/healthtracker-panel.webp" alt="Panel principal con la tendencia de IMC y los signos vitales del día." width="720" height="1543" loading="lazy" decoding="async">
+          <figcaption>panel principal</figcaption>
+        </figure>
+        <figure>
+          <img src="../../img/showcase/healthtracker-lipidos.webp" alt="Gráfica de evolución del perfil lipídico con sus bandas de referencia." width="720" height="1543" loading="lazy" decoding="async">
+          <figcaption>perfil lipídico</figcaption>
+        </figure>
+        <figure>
+          <img src="../../img/showcase/healthtracker-objetivos.webp" alt="Pantalla de metas de salud con el progreso de cada objetivo." width="720" height="1543" loading="lazy" decoding="async">
+          <figcaption>metas de salud</figcaption>
+        </figure>
+        <figure>
+          <img src="../../img/showcase/healthtracker-descubrir.webp" alt="Sección Descubre con artículos y rutinas de salud." width="720" height="1543" loading="lazy" decoding="async">
+          <figcaption>descubre</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <section class="section wrap" aria-labelledby="otros-health-tracker">
+    <p class="eyebrow">// seguir mirando</p>
+    <h2 class="section__title" id="otros-health-tracker">El resto del portafolio.</h2>
+    <a class="cta cta--primary" href="../index.html">ver_proyectos()</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__top">
+      <a class="brand" href="../../index.html">&lt;Iron<span class="tag">-Coding</span>/&gt;</a>
+      <nav class="site-footer__links" aria-label="Pie de página">
+        <a href="../index.html">Proyectos</a>
+        <a href="../../pages/blog.html">Blog</a>
+        <a href="../../pages/nosotros.html">Nosotros</a>
+        <a href="../../pages/contacto.html">Contacto</a>
+        <a href="../../pages/privacidad.html">Privacidad</a>
+        <a href="../../pages/terminos.html">Términos</a>
+      </nav>
+      <!-- PENDIENTE: reemplazar por los perfiles reales de Iron-Coding -->
+      <div class="site-footer__social">
+        <a href="https://www.linkedin.com/company/iron-coding" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/iron-coding" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.instagram.com/ironcoding" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© <span data-year>2026</span> Iron-Coding</span>
+      <span class="site-footer__loop">for (año = 2026; activo; año++)</span>
+      <span>iron-coding.art</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.js" defer></script>
+
+</body>
+</html>
