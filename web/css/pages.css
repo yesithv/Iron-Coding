@@ -346,25 +346,30 @@ tr:last-child td { border-bottom: 0; }
   gap: 16px;
 }
 
+/* Marco de dispositivo: bisel discreto en vez de un teléfono dibujado.
+   Hace que la captura se lea como producto, sin skeuomorfismo ni imágenes
+   extra que cargar. */
 .galeria figure {
-  background: var(--surface-2);
+  background: linear-gradient(160deg, #34343d, #17171b);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
+  border-radius: 24px;
+  padding: 7px;
+  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.9);
 }
 
 .galeria img {
   width: 100%;
   height: auto;
+  border-radius: 17px;
+  display: block;
 }
 
 .galeria figcaption {
   font-family: var(--mono);
   font-size: 0.72rem;
   color: var(--muted);
-  padding: 10px 12px;
-  border-top: 1px solid var(--line);
-  background: var(--surface);
+  text-align: center;
+  padding: 10px 4px 3px;
 }
 
 /* Índice de proyectos en la parte superior */
@@ -390,6 +395,73 @@ tr:last-child td { border-bottom: 0; }
 .indice-proyectos a:focus-visible {
   color: var(--text);
   border-color: var(--red);
+}
+
+/* ---------- Press kit ---------------------------------------------------- */
+
+/* Texto que la prensa va a copiar tal cual: se marca como bloque citable */
+.cita-copiable {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--violet);
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
+  margin-bottom: 24px;
+}
+
+.cita-copiable p {
+  color: var(--text);
+  margin: 0;
+}
+
+.galeria--prensa {
+  margin-top: 28px;
+  margin-bottom: 8px;
+}
+
+.galeria--prensa figcaption a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.galeria--prensa figcaption a:hover,
+.galeria--prensa figcaption a:focus-visible { color: var(--red-glow); }
+
+.datos-prensa {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px 24px;
+  margin-bottom: 24px;
+}
+
+.datos-prensa dt {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--violet);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: 3px;
+}
+
+.datos-prensa dd {
+  color: var(--muted);
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.prose code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 1px 6px;
+  color: var(--text);
+}
+
+@media (max-width: 520px) {
+  .datos-prensa { grid-template-columns: 1fr; gap: 4px 0; }
+  .datos-prensa dd { margin-bottom: 12px; }
 }
 
 /* ---------- Lista de espera de un producto ------------------------------- */

@@ -14,7 +14,11 @@
 <meta property="og:url" content="https://iron-coding.art/">
 <meta property="og:title" content="Iron-Coding — Forjamos software que resuelve problemas reales">
 <meta property="og:description" content="Aplicaciones móviles multiplataforma con IA aplicada. Precisas, prácticas y hechas para durar.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://iron-coding.art/img/og/iron-coding.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://iron-coding.art/img/og/iron-coding.png">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -24,7 +28,7 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/home.css">
 
-<script>document.documentElement.className = 'js';</script>
+<script>document.documentElement.className='js';setTimeout(function(){document.documentElement.classList.add('sin-revelado')},3000);</script>
 </head>
 <body>
 
@@ -74,7 +78,7 @@
     </h2>
 
     <div class="pillars">
-      <article class="pillar">
+      <article class="pillar" data-revelar>
         <p class="pillar__name">multiplataforma()</p>
         <h3>Un código, todos los dispositivos</h3>
         <p>
@@ -83,7 +87,7 @@
         </p>
       </article>
 
-      <article class="pillar">
+      <article class="pillar" data-revelar>
         <p class="pillar__name">local_first()</p>
         <h3>Funciona sin conexión</h3>
         <p>
@@ -92,7 +96,7 @@
         </p>
       </article>
 
-      <article class="pillar">
+      <article class="pillar" data-revelar>
         <p class="pillar__name">datos_con_respaldo()</p>
         <h3>Cada cifra tiene fuente</h3>
         <p>
@@ -112,7 +116,7 @@
 
     <div class="projects">
 
-      <article class="project project--featured">
+      <article class="project project--featured" data-revelar>
         <div class="project__shot">
           <img src="img/showcase/healthtracker-panel.webp"
                alt="Panel principal de Health Tracker con la tendencia de IMC y los signos vitales del día."
@@ -136,7 +140,7 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" data-revelar>
         <div class="project__shot">
           <img src="img/showcase/runforwin-partida.webp"
                alt="Partida de Run For Win: el personaje de bloques corre por un carril con monedas y obstáculos."
@@ -158,7 +162,7 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" data-revelar>
         <div class="project__shot">
           <img src="img/showcase/footcarbonprint-huella.webp"
                alt="Resultado de FootCarbonPrint: 3,96 toneladas de CO₂ al año con su desglose por categoría."
@@ -180,7 +184,7 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" data-revelar>
         <div class="project__shot">
           <img src="img/showcase/pituapp-mascota.webp"
                alt="Ficha de una mascota en PituApp con su línea de tiempo de vacunas, visitas y peso."

@@ -14,7 +14,11 @@
 <meta property="og:url" content="https://iron-coding.art/proyectos/health-tracker/">
 <meta property="og:title" content="Health Tracker — Iron-Coding">
 <meta property="og:description" content="Seguimiento de indicadores de salud con interpretación clínica, historiales con gráficas y exportación a PDF.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://iron-coding.art/img/og/health-tracker.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://iron-coding.art/img/og/health-tracker.png">
 
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
@@ -24,7 +28,7 @@
 <link rel="stylesheet" href="../../css/base.css">
 <link rel="stylesheet" href="../../css/pages.css">
 
-<script>document.documentElement.className = 'js';</script>
+<script>document.documentElement.className='js';setTimeout(function(){document.documentElement.classList.add('sin-revelado')},3000);</script>
 </head>
 <body>
 
@@ -97,23 +101,24 @@
         <div class="proyecto__acciones">
           <a class="cta" href="#lista-espera">avisarme()</a>
           <a class="cta" href="soporte.html">soporte()</a>
+          <a class="cta" href="prensa.html">prensa()</a>
         </div>
       </div>
 
       <div class="galeria">
-        <figure>
+        <figure data-revelar>
           <img src="../../img/showcase/healthtracker-panel.webp" alt="Panel principal con la tendencia de IMC y los signos vitales del día." width="720" height="1543" loading="lazy" decoding="async">
           <figcaption>panel principal</figcaption>
         </figure>
-        <figure>
+        <figure data-revelar>
           <img src="../../img/showcase/healthtracker-lipidos.webp" alt="Gráfica de evolución del perfil lipídico con sus bandas de referencia." width="720" height="1543" loading="lazy" decoding="async">
           <figcaption>perfil lipídico</figcaption>
         </figure>
-        <figure>
+        <figure data-revelar>
           <img src="../../img/showcase/healthtracker-objetivos.webp" alt="Pantalla de metas de salud con el progreso de cada objetivo." width="720" height="1543" loading="lazy" decoding="async">
           <figcaption>metas de salud</figcaption>
         </figure>
-        <figure>
+        <figure data-revelar>
           <img src="../../img/showcase/healthtracker-descubrir.webp" alt="Sección Descubre con artículos y rutinas de salud." width="720" height="1543" loading="lazy" decoding="async">
           <figcaption>descubre</figcaption>
         </figure>

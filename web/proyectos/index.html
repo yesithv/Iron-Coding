@@ -14,7 +14,11 @@
 <meta property="og:url" content="https://iron-coding.art/proyectos/">
 <meta property="og:title" content="Proyectos — Iron-Coding">
 <meta property="og:description" content="Los productos de Iron-Coding, cada uno con su ficha y sus documentos legales.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://iron-coding.art/img/og/iron-coding.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://iron-coding.art/img/og/iron-coding.png">
 
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
@@ -24,7 +28,7 @@
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/pages.css">
 
-<script>document.documentElement.className = 'js';</script>
+<script>document.documentElement.className='js';setTimeout(function(){document.documentElement.classList.add('sin-revelado')},3000);</script>
 </head>
 <body>
 
@@ -69,7 +73,7 @@
   <section class="section wrap" aria-labelledby="lista-proyectos">
     <h2 class="sr-only" id="lista-proyectos">Listado de proyectos</h2>
     <div class="projects projects--indice">
-      <article class="project">
+      <article class="project" data-revelar>
         <div class="project__shot">
           <img src="../img/showcase/healthtracker-panel.webp" alt="Panel principal con la tendencia de IMC y los signos vitales del día." width="720" height="1543" loading="lazy" decoding="async">
         </div>
@@ -84,7 +88,7 @@
           <p class="project__more">ver_detalle() →</p>
         </div>
       </article>
-      <article class="project">
+      <article class="project" data-revelar>
         <div class="project__shot">
           <img src="../img/showcase/runforwin-partida.webp" alt="Partida en curso: el personaje corre por el carril central recogiendo monedas." width="720" height="1243" loading="lazy" decoding="async">
         </div>
@@ -98,7 +102,7 @@
           <p class="project__more">ver_detalle() →</p>
         </div>
       </article>
-      <article class="project">
+      <article class="project" data-revelar>
         <div class="project__shot">
           <img src="../img/showcase/footcarbonprint-huella.webp" alt="Resultado del test: 3,96 toneladas de CO₂ al año con su desglose." width="720" height="1255" loading="lazy" decoding="async">
         </div>
@@ -112,7 +116,7 @@
           <p class="project__more">ver_detalle() →</p>
         </div>
       </article>
-      <article class="project">
+      <article class="project" data-revelar>
         <div class="project__shot">
           <img src="../img/showcase/pituapp-mascota.webp" alt="Ficha de una mascota con su línea de tiempo de vacunas, visitas y peso." width="720" height="1247" loading="lazy" decoding="async">
         </div>
@@ -148,6 +152,7 @@
             <th scope="col">Privacidad</th>
             <th scope="col">Términos</th>
             <th scope="col">Soporte</th>
+            <th scope="col">Prensa</th>
           </tr>
         </thead>
         <tbody>
@@ -156,24 +161,28 @@
               <td><a href="health-tracker/privacidad.html">privacidad.html</a></td>
               <td><a href="health-tracker/terminos.html">terminos.html</a></td>
               <td><a href="health-tracker/soporte.html">soporte.html</a></td>
+              <td><a href="health-tracker/prensa.html">prensa.html</a></td>
             </tr>
             <tr>
               <th scope="row"><a href="run-for-win/index.html">Run For Win</a></th>
               <td><a href="run-for-win/privacidad.html">privacidad.html</a></td>
               <td><a href="run-for-win/terminos.html">terminos.html</a></td>
               <td><a href="run-for-win/soporte.html">soporte.html</a></td>
+              <td><a href="run-for-win/prensa.html">prensa.html</a></td>
             </tr>
             <tr>
               <th scope="row"><a href="footcarbonprint/index.html">FootCarbonPrint</a></th>
               <td><a href="footcarbonprint/privacidad.html">privacidad.html</a></td>
               <td><a href="footcarbonprint/terminos.html">terminos.html</a></td>
               <td><a href="footcarbonprint/soporte.html">soporte.html</a></td>
+              <td><a href="footcarbonprint/prensa.html">prensa.html</a></td>
             </tr>
             <tr>
               <th scope="row"><a href="pituapp/index.html">PituApp</a></th>
               <td><a href="pituapp/privacidad.html">privacidad.html</a></td>
               <td><a href="pituapp/terminos.html">terminos.html</a></td>
               <td><a href="pituapp/soporte.html">soporte.html</a></td>
+              <td><a href="pituapp/prensa.html">prensa.html</a></td>
             </tr>
         </tbody>
       </table>

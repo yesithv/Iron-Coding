@@ -8,6 +8,52 @@
 (function () {
   'use strict';
 
+  /* ---------- Revelado al entrar en pantalla ----------------------------- */
+  /* Va primero, antes que cualquier otra cosa que pudiera fallar: si esto no
+     corre, el contenido con [data-revelar] se queda oculto hasta que salte la
+     salvaguarda de 3 s del <head>. */
+
+  (function revelado() {
+    var elementos = document.querySelectorAll('[data-revelar]');
+    if (!elementos.length) return;
+
+    var mostrarTodo = function () {
+      for (var i = 0; i < elementos.length; i++) elementos[i].classList.add('visible');
+    };
+
+    // Sin soporte del navegador, o si la persona pidió menos movimiento:
+    // se muestra todo de una vez, sin animación.
+    var menosMovimiento = window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!('IntersectionObserver' in window) || menosMovimiento) {
+      mostrarTodo();
+      return;
+    }
+
+    // Escalonado por grupo: los hermanos que se revelan juntos entran
+    // uno detrás de otro, no todos de golpe.
+    var contadores = [];
+    for (var j = 0; j < elementos.length; j++) {
+      var padre = elementos[j].parentNode;
+      var pos = contadores.indexOf(padre);
+      if (pos === -1) { contadores.push(padre); pos = contadores.length - 1; }
+      if (!padre.__n) padre.__n = 0;
+      elementos[j].style.setProperty('--retraso', Math.min(padre.__n, 5) * 70 + 'ms');
+      padre.__n++;
+    }
+
+    var observador = new IntersectionObserver(function (entradas) {
+      for (var k = 0; k < entradas.length; k++) {
+        if (!entradas[k].isIntersecting) continue;
+        entradas[k].target.classList.add('visible');
+        observador.unobserve(entradas[k].target); // una sola vez
+      }
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    for (var m = 0; m < elementos.length; m++) observador.observe(elementos[m]);
+  })();
+
   /* ---------- Menú móvil ------------------------------------------------- */
 
   var toggle = document.querySelector('.nav-toggle');

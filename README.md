@@ -24,6 +24,7 @@ web/                      ← esto es el sitio: lo que se sube a public_html
 ├── fonts/                JetBrains Mono y Manrope (variables, subconjunto latino)
 ├── img/
 │   ├── apple-touch-icon.png
+│   ├── og/               Imágenes de previsualización para redes (1200x630)
 │   └── showcase/         Capturas optimizadas a WebP
 ├── pages/                Páginas transversales del sitio
 │   ├── blog.html         Índice del blog
@@ -35,9 +36,11 @@ web/                      ← esto es el sitio: lo que se sube a public_html
 └── proyectos/            Un directorio por producto
     ├── index.html        Índice del portafolio
     ├── health-tracker/
-    │   ├── index.html        Ficha del producto
+    │   ├── index.html        Ficha del producto + lista de espera
     │   ├── privacidad.html   Política de ESTA app (la URL que pide la tienda)
-    │   └── terminos.html     Términos de ESTA app
+    │   ├── terminos.html     Términos de ESTA app
+    │   ├── soporte.html      Soporte y FAQ (OBLIGATORIA en App Store)
+    │   └── prensa.html       Press kit: descripciones, ficha y capturas
     ├── run-for-win/      (misma estructura)
     ├── footcarbonprint/  (misma estructura)
     └── pituapp/          (misma estructura)
@@ -46,7 +49,8 @@ fuentes/                  ← material de trabajo, NO se publica
 ├── capturas-originales/  PNG originales de cada app + enlace a su README
 ├── iteraciones-diseno/   Exploraciones de identidad visual
 └── herramientas/
-    └── scaffold_proyectos.py   Andamiaje de la sección de proyectos
+    ├── scaffold_proyectos.py   Andamiaje de la sección de proyectos
+    └── generar_og.py           Imágenes og:image para compartir en redes
 ```
 
 > El encabezado y el pie están duplicados en cada archivo HTML, porque el sitio
@@ -72,6 +76,7 @@ Las URL que se registran en cada tienda quedan así:
 https://iron-coding.art/proyectos/<slug>/privacidad.html    Play + App Store
 https://iron-coding.art/proyectos/<slug>/terminos.html      opcional (EULA)
 https://iron-coding.art/proyectos/<slug>/soporte.html       OBLIGATORIA en App Store
+https://iron-coding.art/proyectos/<slug>/prensa.html        press kit
 ```
 
 con `<slug>` = `health-tracker`, `run-for-win`, `footcarbonprint` o `pituapp`.
@@ -210,3 +215,26 @@ im = Image.open('origen.png').convert('RGB')
 im = im.resize((720, round(im.height * 720 / im.width)), Image.LANCZOS)
 im.save('web/img/showcase/destino.webp', 'WEBP', quality=78, method=6)
 ```
+
+## Movimiento
+
+Dos únicos mecanismos, ambos en CSS:
+
+1. **Entrada del hero** — una sola vez, escalonada, solo en la portada.
+2. **Revelado al hacer scroll** — `[data-revelar]`, una vez por elemento, con
+   `IntersectionObserver` (~1 KB en `main.js`). Nada se repite en bucle.
+
+Los dos respetan `prefers-reduced-motion`. Y el estado oculto solo se aplica con
+`html.js`, más una salvaguarda de 3 s en el script del `<head>`: si `main.js` no
+llega a ejecutarse, el contenido aparece igual en lugar de quedarse invisible.
+
+Se descartó a propósito el fondo animado tipo «red neuronal»: los héroes WebGL
+degradan el LCP, y con este sitio en hosting compartido eso costaría más de lo
+que aporta.
+
+## Imágenes para redes
+
+`python3 fuentes/herramientas/generar_og.py` regenera `web/img/og/*.png`
+(1200 × 630) con las tipografías del propio sitio. Hay una genérica y una por
+producto, con su captura. Se versionan y se sirven tal cual; solo hay que
+reejecutar el script si cambian los textos o se añade un proyecto.

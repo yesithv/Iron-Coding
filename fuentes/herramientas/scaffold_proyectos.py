@@ -89,6 +89,25 @@ PROYECTOS = [
         ],
         # ---- Lista de espera: la app todavia no esta publicada ----
         'lista_espera': True,
+        'prensa': {
+            'categoria': 'Salud y forma física',
+            'idiomas': 'Español, inglés, portugués, italiano y alemán',
+            'precio': '<span class="pendiente">[POR DEFINIR]</span>',
+            'corta': 'Tus indicadores de salud, interpretados contra rangos clínicos reales.',
+            'media': 'Health Tracker registra signos vitales, antropometría, perfil lipídico y '
+                     'composición corporal, y contrasta cada valor con bandas clínicas resueltas '
+                     'por dispositivo de medición, sexo y edad. Funciona sin conexión y exporta a '
+                     'PDF y CSV.',
+            'larga': 'La mayoría de aplicaciones de salud guardan números; Health Tracker los '
+                     'interpreta. Cada medición se contrasta con rangos clínicos administrados en '
+                     'servidor —no con una tabla genérica— y se presenta con un semáforo de estado, '
+                     'porque un perfil lipídico debe leerse con los cortes del laboratorio donde se '
+                     'tomó el examen. Todo se guarda en el dispositivo y la aplicación es plenamente '
+                     'usable sin red; la sincronización solo marca un registro como sincronizado si '
+                     'el servidor confirma, de modo que un fallo de conexión nunca pierde datos. '
+                     'Incluye historiales con gráficas y bandas de referencia, exportación a PDF y '
+                     'CSV, copia de seguridad completa, bloqueo biométrico opcional y cinco idiomas.',
+        },
         # ---- Soporte: Apple EXIGE una URL de soporte funcional por app ----
         'soporte': {
             'intro': 'Escríbenos y te respondemos en menos de dos días hábiles. '
@@ -205,6 +224,24 @@ PROYECTOS = [
             ('runforwin-ruleta.webp', 1255, 'Ruleta diaria con premios de monedas y piezas por rareza.', 'ruleta diaria'),
         ],
         'lista_espera': True,
+        'prensa': {
+            'categoria': 'Juegos · Arcade',
+            'idiomas': 'Español e inglés',
+            'precio': 'Gratuita, sin compras dentro de la aplicación',
+            'corta': 'Diseña tu minifigura de bloques y corre con ella esquivando jefes.',
+            'media': 'Run For Win combina un editor de personajes de bloques con un endless runner '
+                     'pseudo-3D de tres carriles y peleas contra jefes al final de cada mundo. '
+                     'Sin anuncios, sin cuentas y sin recoger datos personales.',
+            'larga': 'Run For Win son dos juegos en uno. Primero se diseña una minifigura de '
+                     'bloques —cara, peinado, torso, piernas, calzado, capa, ocho ranuras de '
+                     'accesorios y hasta la música de partida— y después se sale a correr con ella '
+                     'por mundos temáticos en una vista pseudo-3D de tres carriles, esquivando '
+                     'obstáculos, recogiendo monedas y activando potenciadores. Al cierre de cada '
+                     'mundo espera un jefe con tres corazones. Alrededor hay una economía completa: '
+                     'ruleta diaria, cofres, tienda de piezas por rareza, misiones rotativas y '
+                     'ranking local. Los personajes, mundos y jefes se dibujan por código, no con '
+                     'imágenes, así que el juego pesa lo que pesa el motor.',
+        },
         'soporte': {
             'intro': 'Escríbenos y te respondemos en menos de dos días hábiles. '
                      'Si el juego se cierra o se queda trabado, dinos en qué mundo estabas y '
@@ -304,6 +341,24 @@ PROYECTOS = [
             ('footcarbonprint-retos.webp', 1256, 'Pantalla de logros y reto semanal con su recompensa en puntos.', 'retos y logros'),
         ],
         'lista_espera': True,
+        'prensa': {
+            'categoria': 'Estilo de vida · Sostenibilidad',
+            'idiomas': '<span class="pendiente">[POR CONFIRMAR AL CERRAR EL MVP]</span>',
+            'precio': '<span class="pendiente">[POR DEFINIR]</span>',
+            'corta': 'Conoce tu huella de carbono en menos de siete minutos y qué hacer con ella.',
+            'media': 'FootCarbonPrint calcula la huella de carbono personal con factores de emisión '
+                     'del IPCC, la EPA y el GHG Protocol, la traduce en equivalencias entendibles y '
+                     'entrega un plan de acción ordenado por impacto real.',
+            'larga': 'El problema de las calculadoras de huella de carbono no es medir: es que el '
+                     'resultado no le dice nada a nadie. FootCarbonPrint responde con equivalencias '
+                     'que sí se entienden —«tu impacto equivale a talar 70 árboles al año»— y con un '
+                     'plan de acción ordenado por reducción estimada, indicando la dificultad de cada '
+                     'medida. El test se responde deslizando y tocando, nunca escribiendo: seis '
+                     'módulos independientes, un máximo de 35 preguntas y valores por defecto '
+                     'inteligentes. Los factores están calibrados por país, porque la red eléctrica '
+                     'colombiana (0,175 kgCO₂/kWh, mayoritariamente hidroeléctrica) no se parece a la '
+                     'alemana. Cada factor del motor de cálculo tiene su referencia documentada.',
+        },
         'soporte': {
             'intro': 'Escríbenos y te respondemos en menos de dos días hábiles. '
                      'Si el resultado del test no te cuadra, cuéntanos qué módulo es y qué '
@@ -413,6 +468,24 @@ PROYECTOS = [
             ('pituapp-reporte.webp', 1251, 'Reporte veterinario en PDF con condiciones, visitas, vacunas y plan de cuidados.', 'reporte veterinario'),
         ],
         'lista_espera': True,
+        'prensa': {
+            'categoria': 'Estilo de vida · Mascotas',
+            'idiomas': 'Español',
+            'precio': 'Gratuita, con versión Pro de pago único',
+            'corta': 'El cuidado de tu mascota, siempre al día, sin depender de tu memoria.',
+            'media': 'PituApp convierte el cuidado de una mascota en un plan que se recalcula solo: '
+                     'vacunas, desparasitaciones, visitas y peso, con recordatorios y un reporte '
+                     'veterinario en PDF. Todo se guarda en el dispositivo, sin cuenta ni servidor.',
+            'larga': 'Quien cuida un animal lleva las fechas en la cabeza o en un cuaderno: la '
+                     'desparasitación cada cuatro meses, la vacuna anual, el control de peso mensual. '
+                     'PituApp lo convierte en un plan de cuidados que se recalcula cada vez que se '
+                     'marca algo como hecho y avisa antes de que venza. Lo que la separa de una lista '
+                     'de tareas es el historial clínico: visitas médicas, vacunas con su próxima '
+                     'dosis autosugerida, diagnósticos con estado y registro de peso con aviso '
+                     'informativo cuando la variación supera el 10 %. Todo se exporta a un reporte '
+                     'veterinario en PDF listo para la consulta. No hay cuenta de usuario ni '
+                     'servidor: los datos viven en el teléfono y se llevan con el respaldo en JSON.',
+        },
         'soporte': {
             'intro': 'Escríbenos y te respondemos en menos de dos días hábiles. '
                      'Si es un problema con recordatorios, dinos qué sistema operativo y qué '
@@ -488,12 +561,19 @@ PROYECTOS = [
 def esc(t):
     return t
 
-def cabecera(prof, titulo, descripcion, canonical, nav_actual, noindex=False):
-    """prof = profundidad respecto de web/ (1 = proyectos/, 2 = proyectos/slug/)."""
+def cabecera(prof, titulo, descripcion, canonical, nav_actual, noindex=False,
+             og='iron-coding'):
+    """prof = profundidad respecto de web/ (1 = proyectos/, 2 = proyectos/slug/).
+
+    og = nombre del PNG en img/og/ que se muestra al compartir el enlace.
+    Tiene que ser absoluto: los rastreadores de redes no resuelven rutas
+    relativas.
+    """
     r = '../' * prof
     proy_href = 'index.html' if prof == 1 else '../index.html'
     act = lambda k: ' aria-current="page"' if nav_actual == k else ''
     meta_noindex = '\n<meta name="robots" content="noindex, nofollow">' if noindex else ''
+    og_url = f'https://iron-coding.art/img/og/{og}.png'
     return f'''<!DOCTYPE html>
 <html lang="es" class="no-js">
 <head>
@@ -510,7 +590,11 @@ def cabecera(prof, titulo, descripcion, canonical, nav_actual, noindex=False):
 <meta property="og:url" content="https://iron-coding.art/{canonical}">
 <meta property="og:title" content="{titulo}">
 <meta property="og:description" content="{descripcion}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{og_url}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{og_url}">
 
 <link rel="icon" href="{r}favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{r}img/apple-touch-icon.png">
@@ -520,7 +604,7 @@ def cabecera(prof, titulo, descripcion, canonical, nav_actual, noindex=False):
 <link rel="stylesheet" href="{r}css/base.css">
 <link rel="stylesheet" href="{r}css/pages.css">
 
-<script>document.documentElement.className = 'js';</script>
+<script>document.documentElement.className='js';setTimeout(function(){{document.documentElement.classList.add('sin-revelado')}},3000);</script>
 </head>
 <body>
 
@@ -621,6 +705,7 @@ def pagina_producto(p, i):
     if p.get('lista_espera'):
         acciones.append('<a class="cta" href="#lista-espera">avisarme()</a>')
     acciones.append('<a class="cta" href="soporte.html">soporte()</a>')
+    acciones.append('<a class="cta" href="prensa.html">prensa()</a>')
     bloque_acciones = '\n          '.join(acciones)
 
     # Bloque de lista de espera: solo mientras la app no este publicada.
@@ -686,7 +771,7 @@ def pagina_producto(p, i):
   </section>
 '''
 
-    galeria = '\n'.join(f'''        <figure>
+    galeria = '\n'.join(f'''        <figure data-revelar>
           <img src="../../img/showcase/{img}" alt="{alt}" width="720" height="{h}" loading="lazy" decoding="async">
           <figcaption>{cap}</figcaption>
         </figure>''' for img, h, alt, cap in p['galeria'])
@@ -732,11 +817,125 @@ def pagina_producto(p, i):
   </section>
 '''
     return (cabecera(prof, f"{p['nombre']} — Iron-Coding", p['resumen_corto'],
-                     f'proyectos/{slug}/', 'proyectos')
+                     f'proyectos/{slug}/', 'proyectos', og=slug)
             + cuerpo + pie(prof)).replace(
         '<script src="../../js/main.js" defer></script>',
         '<script src="../../js/main.js" defer></script>\n<script src="../../js/formularios.js" defer></script>'
         if p.get('lista_espera') else '<script src="../../js/main.js" defer></script>')
+
+
+# --------------------------------------------------------------------------
+# Press kit de la app
+# --------------------------------------------------------------------------
+
+def pagina_prensa(p):
+    slug, nombre, R = p['slug'], p['nombre'], p['prensa']
+    prof = 2
+
+    capturas = '\n'.join(f'''        <figure data-revelar>
+          <img src="../../img/showcase/{img}" alt="{alt}" width="720" height="{h}" loading="lazy" decoding="async">
+          <figcaption><a href="../../img/showcase/{img}" download>{cap} ↓</a></figcaption>
+        </figure>''' for img, h, alt, cap in p['galeria'])
+
+    demo = ''
+    if p['demo']:
+        url, _ = p['demo']
+        demo = f'''
+            <dt>Demo jugable</dt>
+            <dd><a href="{url}" target="_blank" rel="noopener noreferrer">{url}</a></dd>'''
+
+    cuerpo = f'''
+{migas(prof, ('proyectos', '../index.html'), (nombre, 'index.html'), ('prensa', None))}
+  <section class="page-hero wrap">
+    <p class="eyebrow">// press kit · {slug}</p>
+    <h1>Prensa — {nombre}</h1>
+    <p class="page-hero__lead">
+      Todo lo que necesitas para escribir sobre {nombre}: descripciones listas para copiar,
+      ficha técnica, capturas en alta y contacto directo. Puedes usar este material
+      libremente en artículos, reseñas y publicaciones sobre la aplicación.
+    </p>
+  </section>
+
+  <section class="section wrap">
+    <div class="prose">
+
+      <h2 id="descripciones">Descripciones</h2>
+      <p>Tres versiones, según el espacio del que dispongas. Se pueden usar tal cual.</p>
+
+      <h3>Una línea</h3>
+      <div class="cita-copiable"><p>{R['corta']}</p></div>
+
+      <h3>Párrafo corto</h3>
+      <div class="cita-copiable"><p>{R['media']}</p></div>
+
+      <h3>Descripción completa</h3>
+      <div class="cita-copiable"><p>{R['larga']}</p></div>
+
+      <h2 id="ficha">Ficha técnica</h2>
+      <div class="tabla-wrap">
+        <table>
+          <caption class="sr-only">Ficha técnica de {nombre}</caption>
+          <tbody>
+            <tr><th scope="row">Nombre</th><td>{p['marca_tienda']}</td></tr>
+            <tr><th scope="row">Desarrollador</th><td>Iron-Coding — <span class="pendiente">[RAZÓN SOCIAL]</span></td></tr>
+            <tr><th scope="row">Categoría</th><td>{R['categoria']}</td></tr>
+            <tr><th scope="row">Plataformas</th><td>{p['ficha'][1][1]}</td></tr>
+            <tr><th scope="row">Idiomas</th><td>{R['idiomas']}</td></tr>
+            <tr><th scope="row">Precio</th><td>{R['precio']}</td></tr>
+            <tr><th scope="row">Estado</th><td>{p['ficha'][0][1]}</td></tr>
+            <tr><th scope="row">Fecha de lanzamiento</th><td><span class="pendiente">[POR DEFINIR]</span></td></tr>
+            <tr><th scope="row">Sitio</th><td><a href="index.html">iron-coding.art/proyectos/{slug}/</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="capturas">Capturas</h2>
+      <p>
+        En formato WebP, 720 px de ancho. Si necesitas otra resolución u otro formato,
+        pídenoslas y te las mandamos.
+      </p>
+    </div>
+
+    <div class="galeria galeria--prensa">
+{capturas}
+    </div>
+
+    <div class="prose" style="margin-top:56px">
+      <h2 id="marca">Marca</h2>
+      <p>
+        El logotipo es la etiqueta autocontenida <code>&lt;Iron-Coding/&gt;</code> y debe usarse
+        siempre completa, sin recortar los signos ni alterar sus colores.
+      </p>
+      <ul>
+        <li><a href="../../favicon.svg" download>Isotipo en SVG</a> — vectorial, escala sin perder calidad.</li>
+        <li><a href="../../img/apple-touch-icon.png" download>Icono en PNG</a> — 180 × 180 px.</li>
+        <li><a href="../../img/og/{slug}.png" download>Imagen de portada</a> — 1200 × 630 px.</li>
+      </ul>
+      <p>
+        Colores de marca: negro de forja <code>#0A0A0C</code>, rojo <code>#C1272D</code>,
+        violeta <code>#8B5CF6</code> y blanco cálido <code>#F2F0EC</code>.
+      </p>
+
+      <h2 id="contacto-prensa">Contacto de prensa</h2>
+      <dl class="datos-prensa">
+        <dt>Correo</dt>
+        <dd><a href="mailto:prensa@iron-coding.art">prensa@iron-coding.art</a></dd>
+        <dt>Tiempo de respuesta</dt>
+        <dd>Menos de dos días hábiles</dd>
+        <dt>Idiomas</dt>
+        <dd>Español e inglés</dd>{demo}
+      </dl>
+      <p>
+        ¿Necesitas una entrevista, una versión de prueba anticipada o material que no esté
+        aquí? Escríbenos y lo preparamos.
+      </p>
+    </div>
+  </section>
+'''
+    return (cabecera(prof, f'Prensa — {nombre} — Iron-Coding',
+                     f'Press kit de {nombre}: descripciones, ficha técnica, capturas y contacto de prensa.',
+                     f'proyectos/{slug}/prensa.html', 'proyectos', og=slug)
+            + cuerpo + pie(prof))
 
 
 # --------------------------------------------------------------------------
@@ -814,7 +1013,7 @@ def pagina_soporte(p):
 '''
     return (cabecera(prof, f'Soporte de {nombre} — Iron-Coding',
                      f'Ayuda, preguntas frecuentes y contacto de soporte de la aplicación {nombre}.',
-                     f'proyectos/{slug}/soporte.html', 'proyectos')
+                     f'proyectos/{slug}/soporte.html', 'proyectos', og=slug)
             + cuerpo + pie(prof))
 
 
@@ -1039,7 +1238,7 @@ def pagina_privacidad(p):
 '''
     return (cabecera(prof, f'Privacidad de {nombre} — Iron-Coding',
                      f'Política de privacidad de la aplicación {nombre} de Iron-Coding.',
-                     f'proyectos/{slug}/privacidad.html', 'proyectos')
+                     f'proyectos/{slug}/privacidad.html', 'proyectos', og=slug)
             + cuerpo + pie(prof))
 
 
@@ -1225,7 +1424,7 @@ def pagina_terminos(p):
 '''
     return (cabecera(prof, f'Términos de {nombre} — Iron-Coding',
                      f'Términos de uso de la aplicación {nombre} de Iron-Coding.',
-                     f'proyectos/{slug}/terminos.html', 'proyectos')
+                     f'proyectos/{slug}/terminos.html', 'proyectos', og=slug)
             + cuerpo + pie(prof))
 
 
@@ -1239,7 +1438,7 @@ def pagina_indice(proyectos):
     for i, p in enumerate(proyectos):
         img, h, alt, _ = p['galeria'][0]
         insignia = '<span class="chip chip--state">producto insignia</span>\n            ' if p['insignia'] else ''
-        tarjetas.append(f'''      <article class="project">
+        tarjetas.append(f'''      <article class="project" data-revelar>
         <div class="project__shot">
           <img src="../img/showcase/{img}" alt="{alt}" width="720" height="{h}" loading="lazy" decoding="async">
         </div>
@@ -1259,6 +1458,7 @@ def pagina_indice(proyectos):
               <td><a href="{p['slug']}/privacidad.html">privacidad.html</a></td>
               <td><a href="{p['slug']}/terminos.html">terminos.html</a></td>
               <td><a href="{p['slug']}/soporte.html">soporte.html</a></td>
+              <td><a href="{p['slug']}/prensa.html">prensa.html</a></td>
             </tr>''' for p in proyectos)
 
     cuerpo = f'''
@@ -1299,6 +1499,7 @@ def pagina_indice(proyectos):
             <th scope="col">Privacidad</th>
             <th scope="col">Términos</th>
             <th scope="col">Soporte</th>
+            <th scope="col">Prensa</th>
           </tr>
         </thead>
         <tbody>
@@ -1362,6 +1563,8 @@ def main():
         escribir(os.path.join(base, 'terminos.html'), pagina_terminos(p),
                  args.forzar, args.listar, creados, saltados)
         escribir(os.path.join(base, 'soporte.html'), pagina_soporte(p),
+                 args.forzar, args.listar, creados, saltados)
+        escribir(os.path.join(base, 'prensa.html'), pagina_prensa(p),
                  args.forzar, args.listar, creados, saltados)
 
     verbo = 'Se crearían' if args.listar else 'Creados'

@@ -67,6 +67,26 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://iron-coding.art/proyectos/health-tracker/prensa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iron-coding.art/proyectos/run-for-win/prensa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iron-coding.art/proyectos/footcarbonprint/prensa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iron-coding.art/proyectos/pituapp/prensa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://iron-coding.art/pages/privacidad.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

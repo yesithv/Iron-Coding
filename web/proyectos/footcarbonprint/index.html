@@ -14,7 +14,11 @@
 <meta property="og:url" content="https://iron-coding.art/proyectos/footcarbonprint/">
 <meta property="og:title" content="FootCarbonPrint — Iron-Coding">
 <meta property="og:description" content="Test de huella de carbono con equivalencias entendibles y un plan de acción ordenado por impacto real.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://iron-coding.art/img/og/footcarbonprint.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://iron-coding.art/img/og/footcarbonprint.png">
 
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
@@ -24,7 +28,7 @@
 <link rel="stylesheet" href="../../css/base.css">
 <link rel="stylesheet" href="../../css/pages.css">
 
-<script>document.documentElement.className = 'js';</script>
+<script>document.documentElement.className='js';setTimeout(function(){document.documentElement.classList.add('sin-revelado')},3000);</script>
 </head>
 <body>
 
@@ -94,19 +98,20 @@
         <div class="proyecto__acciones">
           <a class="cta" href="#lista-espera">avisarme()</a>
           <a class="cta" href="soporte.html">soporte()</a>
+          <a class="cta" href="prensa.html">prensa()</a>
         </div>
       </div>
 
       <div class="galeria">
-        <figure>
+        <figure data-revelar>
           <img src="../../img/showcase/footcarbonprint-huella.webp" alt="Resultado del test: 3,96 toneladas de CO₂ al año con su desglose." width="720" height="1255" loading="lazy" decoding="async">
           <figcaption>tu huella</figcaption>
         </figure>
-        <figure>
+        <figure data-revelar>
           <img src="../../img/showcase/footcarbonprint-plan.webp" alt="Plan de acción con las medidas ordenadas por reducción estimada de CO₂." width="720" height="1252" loading="lazy" decoding="async">
           <figcaption>plan de acción</figcaption>
         </figure>
-        <figure>
+        <figure data-revelar>
           <img src="../../img/showcase/footcarbonprint-retos.webp" alt="Pantalla de logros y reto semanal con su recompensa en puntos." width="720" height="1256" loading="lazy" decoding="async">
           <figcaption>retos y logros</figcaption>
         </figure>
