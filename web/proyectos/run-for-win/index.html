@@ -93,8 +93,8 @@
 
         <div class="proyecto__acciones">
           <a class="cta cta--primary" href="https://yesithv.github.io/lego-custom-character/" target="_blank" rel="noopener noreferrer">jugar_demo()</a>
-          <a class="cta" href="privacidad.html">privacidad()</a>
-          <a class="cta" href="terminos.html">terminos()</a>
+          <a class="cta" href="#lista-espera">avisarme()</a>
+          <a class="cta" href="soporte.html">soporte()</a>
         </div>
       </div>
 
@@ -118,6 +118,63 @@
       </div>
     </div>
   </article>
+
+  <section class="section wrap" id="lista-espera" aria-labelledby="titulo-lista-run-for-win">
+    <p class="eyebrow">// todavía no está publicada</p>
+    <h2 class="section__title" id="titulo-lista-run-for-win">Te avisamos el día que salga.</h2>
+
+    <div class="lista-espera">
+      <div class="resultado resultado--ok" id="resultado-ok" hidden role="status">
+        <strong>listo()</strong>
+        <p>Te escribiremos a ese correo cuando Run For Win esté disponible. Nada más.</p>
+      </div>
+      <div class="resultado resultado--error" id="resultado-error" hidden role="alert">
+        <strong>error()</strong>
+        <p>No pudimos registrar tu correo. Inténtalo de nuevo o escríbenos a
+           <a href="mailto:contacto@iron-coding.art">contacto@iron-coding.art</a>.</p>
+      </div>
+
+      <form class="form form--lista" action="../../suscribir.php" method="post" novalidate>
+        <input type="hidden" name="app" value="run-for-win">
+
+        <div class="campo" id="campo-correo">
+          <label for="correo">tu correo</label>
+          <input type="email" id="correo" name="correo" required maxlength="180"
+                 autocomplete="email" placeholder="donde te avisamos"
+                 aria-describedby="error-correo">
+          <p class="campo__error" id="error-correo"></p>
+        </div>
+
+        <div class="campo" id="campo-acepto">
+          <div class="consentimiento">
+            <input type="checkbox" id="acepto" name="acepto" value="si" required
+                   aria-describedby="error-acepto">
+            <label for="acepto">
+              Autorizo a Iron-Coding a guardar mi correo con el único fin de avisarme del
+              lanzamiento de esta aplicación, conforme a la
+              <a href="../../pages/privacidad.html">política de privacidad</a>.
+            </label>
+          </div>
+          <p class="campo__error" id="error-acepto"></p>
+        </div>
+
+        <div class="trampa" aria-hidden="true">
+          <label for="pagina-web">No rellenar este campo</label>
+          <input type="text" id="pagina-web" name="pagina_web" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div>
+          <button type="submit" class="cta cta--primary">avisarme()</button>
+        </div>
+      </form>
+
+      <p class="lista-espera__nota">
+        Un solo correo, el del lanzamiento. Ni boletines ni reenvíos a terceros: puedes pedir
+        que te borremos cuando quieras escribiendo a
+        <a href="mailto:privacidad@iron-coding.art">privacidad@iron-coding.art</a>.
+      </p>
+    </div>
+  </section>
 
   <section class="section wrap" aria-labelledby="otros-run-for-win">
     <p class="eyebrow">// seguir mirando</p>
@@ -155,6 +212,7 @@
 </footer>
 
 <script src="../../js/main.js" defer></script>
+<script src="../../js/formularios.js" defer></script>
 
 </body>
 </html>

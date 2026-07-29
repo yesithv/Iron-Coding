@@ -60,7 +60,7 @@ Esta separación es deliberada y responde a lo que exigen las tiendas:
 | Nivel | Dónde | Qué cubre |
 |---|---|---|
 | **General** | `pages/privacidad.html`<br>`pages/terminos.html` | El sitio web, el formulario de contacto y los principios comunes de la compañía. Aplica de forma supletoria a todo. |
-| **Por aplicación** | `proyectos/<slug>/privacidad.html`<br>`proyectos/<slug>/terminos.html` | Los datos, permisos, terceros y descargos concretos de **esa** app. **Es la URL que se pega en Google Play Console y App Store Connect.** Prevalece sobre la general para esa app. |
+| **Por aplicación** | `proyectos/<slug>/privacidad.html`<br>`proyectos/<slug>/terminos.html`<br>`proyectos/<slug>/soporte.html` | Los datos, permisos, terceros y descargos concretos de **esa** app, más su página de soporte. **Son las URL que se pegan en Google Play Console y App Store Connect.** Prevalece sobre la general para esa app. |
 
 Google Play y la App Store exigen una política de privacidad **por ficha de
 aplicación**, que describa exactamente lo que esa app recoge. Una política
@@ -69,11 +69,12 @@ genérica de empresa es motivo frecuente de rechazo en revisión.
 Las URL que se registran en cada tienda quedan así:
 
 ```
-https://iron-coding.art/proyectos/health-tracker/privacidad.html
-https://iron-coding.art/proyectos/run-for-win/privacidad.html
-https://iron-coding.art/proyectos/footcarbonprint/privacidad.html
-https://iron-coding.art/proyectos/pituapp/privacidad.html
+https://iron-coding.art/proyectos/<slug>/privacidad.html    Play + App Store
+https://iron-coding.art/proyectos/<slug>/terminos.html      opcional (EULA)
+https://iron-coding.art/proyectos/<slug>/soporte.html       OBLIGATORIA en App Store
 ```
+
+con `<slug>` = `health-tracker`, `run-for-win`, `footcarbonprint` o `pituapp`.
 
 ## Cómo agregar un proyecto
 
@@ -96,6 +97,38 @@ volver a ejecutar sin miedo: solo crea lo que falta. No es un paso de
 compilación — una vez generado el HTML, la fuente de verdad es el HTML, sobre
 todo en los textos legales, que se van a corregir a mano tras la revisión
 jurídica. `--forzar` regenera todo y descarta esas correcciones.
+
+## Lista de espera
+
+Ninguna app está publicada todavía, así que cada ficha de producto lleva un
+formulario para avisar del lanzamiento. Es la conversión principal del sitio.
+
+`proyectos/<slug>/index.html` envía por POST a `suscribir.php`, que valida,
+descarta el spam con un campo trampa y guarda la fila en un CSV. La URL de
+retorno **se deriva del slug en el servidor**, nunca del formulario, para que
+esto no se pueda usar como redirector abierto.
+
+Dónde queda el CSV, en orden de preferencia:
+
+1. `/home/<usuario>/iron-coding-datos/lista-espera.csv` — **por encima** de la
+   raíz web. Es lo normal y lo deseable: son datos personales y ahí no hay forma
+   de servirlos por HTTP.
+2. `public_html/datos/lista-espera.csv` — solo si el hosting no deja escribir
+   arriba. Va protegido con `.htaccess`, pero eso depende de que ese archivo
+   oculto se haya subido.
+
+Cuando la lista crezca, conviene pasar a un servicio de correo de verdad
+(Buttondown, MailerLite y similares): un CSV no gestiona bajas ni rebotes.
+
+Al publicar una app hay que quitar su formulario: pon `'lista_espera': False`
+en `scaffold_proyectos.py` y regenera esa ficha.
+
+## Soporte por aplicación
+
+`proyectos/<slug>/soporte.html`. **La App Store exige una URL de soporte
+funcional por cada app y sin ella no se puede ni enviar a revisión.** Tiene que
+ofrecer un método de contacto real: una FAQ sola, un placeholder o un
+«próximamente» son motivo de rechazo. Google Play exige correo de soporte.
 
 ## Formulario de contacto
 
