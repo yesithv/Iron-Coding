@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto — Iron-Coding</title>
+<meta name="description" content="Cuéntanos qué necesitas construir. Escríbenos y te respondemos en menos de dos días hábiles.">
+<meta name="theme-color" content="#0a0a0c">
+<link rel="canonical" href="https://iron-coding.art/pages/contacto.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Iron-Coding">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://iron-coding.art/pages/contacto.html">
+<meta property="og:title" content="Contacto — Iron-Coding">
+<meta property="og:description" content="Cuéntanos qué necesitas construir.">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<link rel="preload" href="../fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/pages.css">
+
+<script>document.documentElement.className = 'js';</script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">saltar_al_contenido()</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="../index.html" aria-label="Iron-Coding, inicio">&lt;Iron<span class="tag">-Coding</span>/&gt;</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="nav-toggle__label">menu()</span>
+    </button>
+
+    <nav aria-label="Principal">
+      <ul class="navlinks" id="nav-menu">
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <div class="wrap">
+    <p class="crumbs"><a href="../index.html">inicio</a><span>/</span>contacto</p>
+  </div>
+
+  <section class="page-hero wrap">
+    <p class="eyebrow">// listo para hablar</p>
+    <h1>contactar()</h1>
+    <p class="page-hero__lead">
+      Cuéntanos qué quieres construir: una app desde cero, evolucionar una que ya existe
+      o una segunda opinión técnica sobre un proyecto en marcha. Respondemos en menos de
+      dos días hábiles.
+    </p>
+  </section>
+
+  <section class="section wrap">
+    <div class="contacto-grid">
+
+      <div>
+        <!-- Mensajes de resultado. Los muestra js/contacto.js según ?estado= -->
+        <div class="resultado resultado--ok" id="resultado-ok" hidden role="status">
+          <strong>mensaje_enviado()</strong>
+          <p>Gracias por escribir. Te respondemos en menos de dos días hábiles.</p>
+        </div>
+
+        <div class="resultado resultado--error" id="resultado-error" hidden role="alert">
+          <strong>error_al_enviar()</strong>
+          <p>
+            No pudimos enviar el mensaje. Inténtalo de nuevo en un momento o escríbenos
+            directamente a <a href="mailto:contacto@iron-coding.art">contacto@iron-coding.art</a>.
+          </p>
+        </div>
+
+        <form class="form" id="form-contacto" action="../enviar.php" method="post" novalidate>
+
+          <div class="campo" id="campo-nombre">
+            <label for="nombre">nombre</label>
+            <input type="text" id="nombre" name="nombre" required maxlength="120"
+                   autocomplete="name" placeholder="Cómo te llamas"
+                   aria-describedby="error-nombre">
+            <p class="campo__error" id="error-nombre"></p>
+          </div>
+
+          <div class="campo" id="campo-email">
+            <label for="email">correo electrónico</label>
+            <input type="email" id="email" name="email" required maxlength="180"
+                   autocomplete="email" placeholder="donde te respondemos"
+                   aria-describedby="error-email">
+            <p class="campo__error" id="error-email"></p>
+          </div>
+
+          <div class="campo" id="campo-empresa">
+            <label for="empresa">empresa <span class="opcional">// opcional</span></label>
+            <input type="text" id="empresa" name="empresa" maxlength="120"
+                   autocomplete="organization" placeholder="Si escribes en nombre de una">
+          </div>
+
+          <div class="campo" id="campo-tipo">
+            <label for="tipo">tipo de proyecto</label>
+            <select id="tipo" name="tipo" required aria-describedby="error-tipo">
+              <option value="">Elige una opción</option>
+              <option value="App nueva">Una app nueva desde cero</option>
+              <option value="Evolucion">Evolucionar una app existente</option>
+              <option value="Consultoria">Consultoría o segunda opinión técnica</option>
+              <option value="Diseno">Diseño de producto e identidad</option>
+              <option value="Otro">Otra cosa</option>
+            </select>
+            <p class="campo__error" id="error-tipo"></p>
+          </div>
+
+          <div class="campo" id="campo-mensaje">
+            <label for="mensaje">mensaje</label>
+            <textarea id="mensaje" name="mensaje" required maxlength="4000"
+                      placeholder="Qué problema quieres resolver, para quién y en qué plazo."
+                      aria-describedby="error-mensaje"></textarea>
+            <p class="campo__error" id="error-mensaje"></p>
+          </div>
+
+          <div class="campo" id="campo-consentimiento">
+            <div class="consentimiento">
+              <input type="checkbox" id="consentimiento" name="consentimiento" value="si" required
+                     aria-describedby="error-consentimiento">
+              <label for="consentimiento">
+                Autorizo a Iron-Coding a tratar mis datos para responder esta solicitud,
+                conforme a la <a href="privacidad.html">política de privacidad</a>.
+              </label>
+            </div>
+            <p class="campo__error" id="error-consentimiento"></p>
+          </div>
+
+          <!-- Trampa antispam: si un robot la rellena, el mensaje se descarta -->
+          <div class="trampa" aria-hidden="true">
+            <label for="sitio-web">No rellenar este campo</label>
+            <input type="text" id="sitio-web" name="sitio_web" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div>
+            <button type="submit" class="cta cta--primary" id="boton-enviar">enviar_mensaje()</button>
+          </div>
+        </form>
+      </div>
+
+      <aside class="contacto-info">
+        <h2>otras_vias()</h2>
+        <dl>
+          <div>
+            <dt>Correo</dt>
+            <dd><a href="mailto:contacto@iron-coding.art">contacto@iron-coding.art</a></dd>
+          </div>
+          <div>
+            <dt>Comercial</dt>
+            <dd><a href="mailto:hola@iron-coding.art">hola@iron-coding.art</a></dd>
+          </div>
+          <div>
+            <dt>Tiempo de respuesta</dt>
+            <dd>Menos de dos días hábiles</dd>
+          </div>
+          <div>
+            <dt>Idiomas</dt>
+            <dd>Español e inglés</dd>
+          </div>
+          <div>
+            <dt>Redes</dt>
+            <dd>
+              <a href="https://www.linkedin.com/company/iron-coding" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            </dd>
+          </div>
+        </dl>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__top">
+      <a class="brand" href="../index.html">&lt;Iron<span class="tag">-Coding</span>/&gt;</a>
+      <nav class="site-footer__links" aria-label="Pie de página">
+        <a href="proyectos.html">Proyectos</a>
+        <a href="blog.html">Blog</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="privacidad.html">Privacidad</a>
+        <a href="terminos.html">Términos</a>
+      </nav>
+      <!-- PENDIENTE: reemplazar por los perfiles reales de Iron-Coding -->
+      <div class="site-footer__social">
+        <a href="https://www.linkedin.com/company/iron-coding" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/iron-coding" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.instagram.com/ironcoding" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© <span data-year>2026</span> Iron-Coding</span>
+      <span class="site-footer__loop">for (año = 2026; activo; año++)</span>
+      <span>iron-coding.art</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js" defer></script>
+<script src="../js/contacto.js" defer></script>
+
+</body>
+</html>

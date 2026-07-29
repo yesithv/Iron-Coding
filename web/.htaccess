@@ -1,0 +1,64 @@
+# =========================================================================
+# Iron-Coding — configuración de Apache para el hosting cPanel (GoDaddy).
+# Este archivo solo actúa en cPanel; GitHub Pages lo ignora.
+# =========================================================================
+
+# ---- Documento por defecto ----------------------------------------------
+DirectoryIndex index.html
+
+# ---- Compresión ----------------------------------------------------------
+# Las fuentes .woff2 y las imágenes .webp ya vienen comprimidas: no se tocan.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---- Caché del navegador -------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # El HTML tiene que revalidarse: es lo que cambia en cada publicación.
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # Los estáticos pueden cachearse fuerte. Al cambiar un CSS o JS, súbelo
+  # con un nombre nuevo (base.css -> base.v2.css) o baja este valor a 1 día.
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(webp|png|svg|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  # Cabeceras de seguridad básicas
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ---- Tipos MIME ----------------------------------------------------------
+# Algunos cPanel antiguos no los traen configurados.
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+  AddType image/svg+xml .svg
+</IfModule>
+
+# ---- Forzar HTTPS --------------------------------------------------------
+# DESACTIVADO a propósito. Actívalo (quita los "#") SOLO cuando el
+# certificado SSL de iron-coding.art ya esté emitido y funcionando;
+# activarlo antes deja el sitio inaccesible.
+#
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} !=on
+#   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
