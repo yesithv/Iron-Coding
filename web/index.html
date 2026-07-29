@@ -1,402 +1,257 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Iron-Coding — Forjamos software que resuelve problemas reales</title>
-<meta name="description" content="Iron-Coding diseña y construye aplicaciones impulsadas por IA — precisas, prácticas y hechas para durar.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #0a0a0c;
-    --surface: #131316;
-    --surface-2: #1c1c20;
-    --red: #c1272d;
-    --red-glow: #ff4d55;
-    --violet: #8b5cf6;
-    --text: #f2f0ec;
-    --muted: #8a8a93;
-    --line: #2a2a2f;
-  }
+<meta name="description" content="Iron-Coding diseña y construye aplicaciones móviles multiplataforma con IA aplicada: salud, sostenibilidad, cuidado de mascotas y juego. Precisas, prácticas y hechas para durar.">
+<meta name="theme-color" content="#0a0a0c">
+<link rel="canonical" href="https://iron-coding.art/">
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Iron-Coding">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://iron-coding.art/">
+<meta property="og:title" content="Iron-Coding — Forjamos software que resuelve problemas reales">
+<meta property="og:description" content="Aplicaciones móviles multiplataforma con IA aplicada. Precisas, prácticas y hechas para durar.">
+<meta name="twitter:card" content="summary">
 
-  html { scroll-behavior: smooth; }
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Manrope', sans-serif;
-    overflow-x: hidden;
-  }
+<link rel="preload" href="fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
 
-  .mono { font-family: 'JetBrains Mono', monospace; }
-
-  /* subtle forge-grid texture */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(242,240,236,0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(242,240,236,0.02) 1px, transparent 1px);
-    background-size: 48px 48px;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  nav {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 28px 6vw;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .brand {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 0.02em;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .brand .tag {
-    background: linear-gradient(135deg, var(--red), var(--violet));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .navlinks {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
-
-  .navlinks a {
-    color: var(--muted);
-    text-decoration: none;
-    position: relative;
-    transition: color 0.25s ease;
-  }
-
-  .navlinks a::before {
-    content: "[";
-    color: var(--line);
-    margin-right: 2px;
-    transition: color 0.25s ease;
-  }
-
-  .navlinks a::after {
-    content: "]";
-    color: var(--line);
-    margin-left: 2px;
-    transition: color 0.25s ease;
-  }
-
-  .navlinks a:hover { color: var(--text); }
-  .navlinks a:hover::before,
-  .navlinks a:hover::after { color: var(--red-glow); }
-
-  .hero {
-    position: relative;
-    z-index: 5;
-    min-height: 82vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 6vw;
-  }
-
-  .signature {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 800;
-    font-size: clamp(2.4rem, 9vw, 6rem);
-    line-height: 1;
-    letter-spacing: -0.01em;
-    background: linear-gradient(120deg, var(--red-glow) 0%, var(--red) 35%, var(--violet) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    filter: drop-shadow(0 0 40px rgba(193,39,45,0.25));
-    opacity: 0;
-    transform: translateY(24px) scale(0.96);
-    animation: forge-in 1.1s cubic-bezier(0.16,1,0.3,1) 0.15s forwards;
-  }
-
-  @keyframes forge-in {
-    to { opacity: 1; transform: translateY(0) scale(1); }
-  }
-
-  .headline {
-    font-size: clamp(1.7rem, 3.2vw, 2.6rem);
-    font-weight: 600;
-    margin-top: 28px;
-    max-width: 18ch;
-    opacity: 0;
-    animation: rise 0.9s ease 0.55s forwards;
-  }
-
-  .sub {
-    color: var(--muted);
-    font-size: 1.05rem;
-    max-width: 46ch;
-    margin-top: 18px;
-    line-height: 1.6;
-    opacity: 0;
-    animation: rise 0.9s ease 0.75s forwards;
-  }
-
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .cta {
-    margin-top: 36px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 28px;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    color: var(--text);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: border-color 0.25s ease, transform 0.25s ease;
-    opacity: 0;
-    animation: rise 0.9s ease 0.95s forwards;
-  }
-
-  .cta:hover {
-    border-color: var(--red);
-    transform: translateY(-2px);
-  }
-
-  section.panel {
-    position: relative;
-    z-index: 5;
-    padding: 90px 6vw;
-    border-top: 1px solid var(--line);
-  }
-
-  .eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--red-glow);
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-
-  .panel h2 {
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
-    font-weight: 600;
-    margin-bottom: 40px;
-    max-width: 24ch;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-  }
-
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 0 0 28px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    color: inherit;
-    text-decoration: none;
-    transition: border-color 0.3s ease, transform 0.3s ease;
-  }
-
-  .card:hover {
-    border-color: var(--violet);
-    transform: translateY(-4px);
-  }
-
-  .card .shot {
-    background: var(--surface-2);
-    border-bottom: 1px solid var(--line);
-    height: 230px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .card .shot img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-
-  .card .body { padding: 26px 28px 0; }
-
-  .card .kicker {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--violet);
-    margin-bottom: 10px;
-  }
-
-  .card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-  }
-
-  .card p {
-    color: var(--muted);
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
-
-  .card .link {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-top: 18px;
-    transition: color 0.25s ease;
-  }
-
-  .card:hover .link { color: var(--red-glow); }
-
-  .code-block {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: clamp(1rem, 2.2vw, 1.35rem);
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 28px 32px;
-    max-width: 480px;
-    line-height: 1.7;
-    color: var(--text);
-    white-space: pre;
-    overflow-x: auto;
-  }
-
-  .code-block .kw { color: var(--violet); }
-  .code-block .fn { color: var(--red-glow); }
-  .code-block .str { color: #d9c17a; }
-
-  footer {
-    position: relative;
-    z-index: 5;
-    padding: 40px 6vw;
-    border-top: 1px solid var(--line);
-    display: flex;
-    justify-content: space-between;
-    color: var(--muted);
-    font-size: 0.85rem;
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  @media (max-width: 640px) {
-    .navlinks { display: none; }
-    footer { flex-direction: column; gap: 8px; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .signature, .headline, .sub, .cta { animation: none; opacity: 1; transform: none; }
-  }
-</style>
+<script>document.documentElement.className = 'js';</script>
 </head>
 <body>
 
-<nav>
-  <div class="brand">&lt;Iron<span class="tag">-Coding</span>/&gt;</div>
-  <ul class="navlinks">
-    <li><a href="#proyectos">Proyectos</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-</nav>
+<a class="skip-link" href="#contenido">saltar_al_contenido()</a>
 
-<section class="hero">
-  <div class="signature">&lt;Iron-Coding/&gt;</div>
-  <h1 class="headline">Forjamos software que resuelve problemas reales.</h1>
-  <p class="sub">Iron-Coding diseña y construye aplicaciones impulsadas por IA — precisas, prácticas y hechas para durar.</p>
-  <a class="cta" href="#proyectos">ver_proyectos()</a>
-</section>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html" aria-label="Iron-Coding, inicio">&lt;Iron<span class="tag">-Coding</span>/&gt;</a>
 
-<section class="panel" id="proyectos">
-  <div class="eyebrow">// showcase</div>
-  <h2>Cada producto se presenta como lo que resuelve, no solo lo que es.</h2>
-  <div class="grid">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="nav-toggle__label">menu()</span>
+    </button>
 
-    <a class="card" href="https://github.com/yesithv/healthtracker-app/blob/main/README.md">
-      <div class="shot"><img src="ShowCase/HealthTracker/1panelprincipal.png" alt="Panel principal de Health Tracker" loading="lazy"></div>
-      <div class="body">
-        <div class="kicker">proyectos[0] — producto insignia</div>
-        <h3>Health Tracker</h3>
-        <p>Seguimiento integral de indicadores de salud con analítica impulsada por IA. El producto más completo de Iron-Coding, diseñado para acompañar decisiones de bienestar todos los días.</p>
-        <div class="link">ver_readme() →</div>
-      </div>
-    </a>
-
-    <a class="card" href="https://github.com/yesithv/pitu-app/blob/main/README.md">
-      <div class="shot"><img src="ShowCase/Pitu-App/pituapp/IMG_0030.png" alt="Pantalla de Pitu App" loading="lazy"></div>
-      <div class="body">
-        <div class="kicker">proyectos[1]</div>
-        <h3>Pitu App</h3>
-        <p>Aplicación móvil construida sobre la misma base técnica: interfaz directa, datos claros y una experiencia pensada para el uso diario.</p>
-        <div class="link">ver_readme() →</div>
-      </div>
-    </a>
-
-    <a class="card" href="https://github.com/yesithv/FootCarbonPrint-App/blob/main/README.md">
-      <div class="shot"><img src="ShowCase/FootCarbonPrint-App/footprint/IMG_0033.png" alt="Pantalla de Foot Carbon Print" loading="lazy"></div>
-      <div class="body">
-        <div class="kicker">proyectos[2]</div>
-        <h3>Foot Carbon Print</h3>
-        <p>Cálculo y seguimiento de huella de carbono personal, para convertir hábitos cotidianos en datos que se pueden medir y mejorar.</p>
-        <div class="link">ver_readme() →</div>
-      </div>
-    </a>
-
-    <a class="card" href="https://github.com/yesithv/lego-custom-character/blob/main/README.md">
-      <div class="shot"><img src="ShowCase/Run-For-Win/runforwin/IMG_0036.png" alt="Pantalla de Run For Win" loading="lazy"></div>
-      <div class="body">
-        <div class="kicker">proyectos[3]</div>
-        <h3>Run For Win</h3>
-        <p>Entrenamiento y competencia con seguimiento de progreso, pensada para sostener la constancia con métricas simples.</p>
-        <div class="link">ver_readme() →</div>
-      </div>
-    </a>
-
+    <nav aria-label="Principal">
+      <ul class="navlinks" id="nav-menu">
+        <li><a href="pages/proyectos.html">Proyectos</a></li>
+        <li><a href="pages/blog.html">Blog</a></li>
+        <li><a href="pages/nosotros.html">Nosotros</a></li>
+        <li><a href="pages/contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
   </div>
-</section>
+</header>
 
-<section class="panel" id="contacto">
-  <div class="eyebrow">// listo para hablar</div>
-  <pre class="code-block"><span class="kw">if</span> (tu_idea.<span class="fn">necesita</span>(<span class="str">"IA"</span>, <span class="str">"precision"</span>)) {
-  <span class="fn">contactar</span>();
-}</pre>
-  <a class="cta" href="mailto:yesithvalencia@gmail.com" style="animation:none; opacity:1; margin-top:24px;">contactar()</a>
-</section>
+<main id="contenido">
 
-<footer>
-  <span>&lt;Iron-Coding/&gt;</span>
-  <span class="mono" style="color:var(--muted); opacity:0.7;">for (año = 2026; activo; año++)</span>
-  <span>iron-coding.art</span>
+  <!-- ============================ HERO ============================ -->
+  <section class="hero wrap">
+    <p class="hero__signature enter mono" style="--d:0.15s">&lt;Iron-Coding/&gt;</p>
+    <h1 class="hero__headline enter" style="--d:0.5s">Forjamos software que resuelve problemas reales.</h1>
+    <p class="hero__sub enter" style="--d:0.68s">
+      Diseñamos y construimos aplicaciones móviles multiplataforma con IA aplicada.
+      Salud, sostenibilidad, cuidado animal y juego — precisas, prácticas y hechas para durar.
+    </p>
+    <div class="hero__actions enter" style="--d:0.86s">
+      <a class="cta cta--primary" href="#proyectos">ver_proyectos()</a>
+      <a class="cta" href="pages/contacto.html">contactar()</a>
+    </div>
+  </section>
+
+  <!-- ====================== PROPUESTA DE VALOR ====================== -->
+  <section class="section wrap" id="propuesta" aria-labelledby="propuesta-titulo">
+    <p class="eyebrow">// qué hacemos</p>
+    <h2 class="section__title" id="propuesta-titulo">
+      No entregamos pantallas bonitas: entregamos productos que aguantan el uso diario.
+    </h2>
+
+    <div class="pillars">
+      <article class="pillar">
+        <p class="pillar__name">multiplataforma()</p>
+        <h3>Un código, todos los dispositivos</h3>
+        <p>
+          Todo el portafolio corre sobre Flutter: Android, iOS y web desde la misma base.
+          Menos superficie que mantener, la misma experiencia en cada pantalla.
+        </p>
+      </article>
+
+      <article class="pillar">
+        <p class="pillar__name">local_first()</p>
+        <h3>Funciona sin conexión</h3>
+        <p>
+          Los datos viven en el dispositivo y se sincronizan cuando hay red, no al revés.
+          Quedarse sin señal no puede ser motivo para que una app deje de servir.
+        </p>
+      </article>
+
+      <article class="pillar">
+        <p class="pillar__name">datos_con_respaldo()</p>
+        <h3>Cada cifra tiene fuente</h3>
+        <p>
+          Rangos clínicos administrados, factores de emisión del IPCC y la EPA.
+          Si mostramos un número, podemos decir de dónde salió.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================ SHOWCASE ============================ -->
+  <section class="section wrap" id="proyectos" aria-labelledby="proyectos-titulo">
+    <p class="eyebrow">// showcase</p>
+    <h2 class="section__title" id="proyectos-titulo">
+      Cada producto se presenta por lo que resuelve, no solo por lo que es.
+    </h2>
+
+    <div class="projects">
+
+      <article class="project project--featured">
+        <div class="project__shot">
+          <img src="img/showcase/healthtracker-panel.webp"
+               alt="Panel principal de Health Tracker con la tendencia de IMC y los signos vitales del día."
+               width="720" height="1543" loading="eager" decoding="async">
+        </div>
+        <div class="project__body">
+          <p class="project__index">proyectos[0] — producto insignia</p>
+          <h3 class="project__name"><a href="pages/proyectos.html#health-tracker">Health Tracker</a></h3>
+          <p class="project__desc">
+            Un paciente registra sus signos vitales, antropometría, perfil lipídico y composición
+            corporal, y ve cada valor interpretado contra rangos clínicos reales — no contra una
+            tabla genérica. Historiales con gráficas, exportación a PDF y cinco idiomas.
+          </p>
+          <div class="project__meta">
+            <span class="chip chip--state">estado: beta interna</span>
+            <span class="chip">Flutter</span>
+            <span class="chip">SQLite local-first</span>
+            <span class="chip">5 idiomas</span>
+          </div>
+          <p class="project__more">ver_detalle() →</p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project__shot">
+          <img src="img/showcase/runforwin-partida.webp"
+               alt="Partida de Run For Win: el personaje de bloques corre por un carril con monedas y obstáculos."
+               width="720" height="1243" loading="lazy" decoding="async">
+        </div>
+        <div class="project__body">
+          <p class="project__index">proyectos[1]</p>
+          <h3 class="project__name"><a href="pages/proyectos.html#run-for-win">Run For Win</a></h3>
+          <p class="project__desc">
+            Editor de personajes de bloques y endless runner pseudo-3D con jefes de mundo.
+            Dos experiencias en una sola app, con economía de monedas, misiones y ranking.
+          </p>
+          <div class="project__meta">
+            <span class="chip chip--state">estado: demo pública</span>
+            <span class="chip">Flutter</span>
+            <span class="chip">Flame</span>
+          </div>
+          <p class="project__more">ver_detalle() →</p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project__shot">
+          <img src="img/showcase/footcarbonprint-huella.webp"
+               alt="Resultado de FootCarbonPrint: 3,96 toneladas de CO₂ al año con su desglose por categoría."
+               width="720" height="1255" loading="lazy" decoding="async">
+        </div>
+        <div class="project__body">
+          <p class="project__index">proyectos[2]</p>
+          <h3 class="project__name"><a href="pages/proyectos.html#footcarbonprint">FootCarbonPrint</a></h3>
+          <p class="project__desc">
+            Autodiagnóstico de huella de carbono en menos de siete minutos. Traduce toneladas de CO₂
+            en equivalencias entendibles y entrega un plan de acción ordenado por impacto real.
+          </p>
+          <div class="project__meta">
+            <span class="chip chip--state">estado: en desarrollo</span>
+            <span class="chip">Flutter</span>
+            <span class="chip">factores IPCC · EPA</span>
+          </div>
+          <p class="project__more">ver_detalle() →</p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project__shot">
+          <img src="img/showcase/pituapp-mascota.webp"
+               alt="Ficha de una mascota en PituApp con su línea de tiempo de vacunas, visitas y peso."
+               width="720" height="1247" loading="lazy" decoding="async">
+        </div>
+        <div class="project__body">
+          <p class="project__index">proyectos[3]</p>
+          <h3 class="project__name"><a href="pages/proyectos.html#pituapp">PituApp</a></h3>
+          <p class="project__desc">
+            Cuidado y salud de mascotas: vacunas, desparasitaciones, visitas y peso, con recordatorios
+            que se recalculan solos y un reporte veterinario en PDF listo para la consulta.
+          </p>
+          <div class="project__meta">
+            <span class="chip chip--state">estado: MVP · demo pública</span>
+            <span class="chip">Flutter</span>
+            <span class="chip">local-first</span>
+          </div>
+          <p class="project__more">ver_detalle() →</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================ CIERRE ============================ -->
+  <section class="section wrap closing" aria-labelledby="cierre-titulo">
+    <p class="eyebrow">// listo para hablar</p>
+    <h2 class="sr-only" id="cierre-titulo">Contacto</h2>
+<pre class="closing__code"><code><span class="tok-kw">if</span> (tu_idea.<span class="tok-fn">necesita</span>(<span class="tok-str">"IA"</span>, <span class="tok-str">"precision"</span>)) {
+  <span class="tok-fn">contactar</span>();
+}</code></pre>
+    <div class="closing__actions">
+      <a class="cta cta--primary" href="pages/contacto.html">contactar()</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__top">
+      <a class="brand" href="index.html">&lt;Iron<span class="tag">-Coding</span>/&gt;</a>
+      <nav class="site-footer__links" aria-label="Pie de página">
+        <a href="pages/proyectos.html">Proyectos</a>
+        <a href="pages/blog.html">Blog</a>
+        <a href="pages/nosotros.html">Nosotros</a>
+        <a href="pages/contacto.html">Contacto</a>
+        <a href="pages/privacidad.html">Privacidad</a>
+        <a href="pages/terminos.html">Términos</a>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© <span data-year>2026</span> Iron-Coding</span>
+      <span class="site-footer__loop">for (año = 2026; activo; año++)</span>
+      <span>iron-coding.art</span>
+    </div>
+  </div>
 </footer>
+
+<script src="js/main.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iron-Coding",
+  "url": "https://iron-coding.art/",
+  "description": "Startup de desarrollo de software que diseña y construye aplicaciones móviles multiplataforma con IA aplicada.",
+  "logo": "https://iron-coding.art/favicon.svg"
+}
+</script>
 
 </body>
 </html>
