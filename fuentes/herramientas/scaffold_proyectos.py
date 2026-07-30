@@ -227,11 +227,14 @@ PROYECTOS = [
         'prensa': {
             'categoria': 'Juegos · Arcade',
             'idiomas': 'Español e inglés',
-            'precio': 'Gratuita, sin compras dentro de la aplicación',
+            'precio': 'Gratuita, con compras opcionales dentro de la aplicación '
+                      '(gemas, packs cosméticos y suscripción VIP). '
+                      '<span class="pendiente">[CONFIRMAR QUÉ SALE ACTIVO EN LA v1]</span>',
             'corta': 'Diseña tu minifigura de bloques y corre con ella esquivando jefes.',
             'media': 'Run For Win combina un editor de personajes de bloques con un endless runner '
                      'pseudo-3D de tres carriles y peleas contra jefes al final de cada mundo. '
-                     'Sin anuncios, sin cuentas y sin recoger datos personales.',
+                     'Sin anuncios, sin cuentas y sin cajas de botín: las compras opcionales son '
+                     'cosméticas o de conveniencia, con precio siempre visible antes de comprar.',
             'larga': 'Run For Win son dos juegos en uno. Primero se diseña una minifigura de '
                      'bloques —cara, peinado, torso, piernas, calzado, capa, ocho ranuras de '
                      'accesorios y hasta la música de partida— y después se sale a correr con ella '
@@ -251,9 +254,15 @@ PROYECTOS = [
                  'No. El juego guarda todo en el dispositivo y no tiene cuenta ni copia en la '
                  'nube, así que al desinstalarlo el progreso se pierde. Es el precio de no pedirte '
                  'ningún dato personal.'),
-                ('¿Las monedas se pueden comprar con dinero real?',
-                 'No. Las monedas se ganan jugando, con la ruleta diaria y con los cofres. No hay '
-                 'compras dentro del juego y las monedas no tienen valor monetario real.'),
+                ('¿Se puede comprar algo con dinero real?',
+                 'Las <strong>monedas</strong> se ganan jugando y no se compran. Sí existen compras '
+                 'opcionales de <strong>gemas</strong>, packs cosméticos y una suscripción VIP. '
+                 'Nada de eso es necesario para jugar ni da ventaja competitiva: no hay cajas de '
+                 'botín ni azar, el precio se ve antes de comprar y la compra pasa por una '
+                 'compuerta parental.'),
+                ('¿Cómo cancelo la suscripción VIP?',
+                 'Desde tu cuenta de Google Play o de la App Store, en la sección de suscripciones. '
+                 'No se cancela desde el juego, porque el cobro lo gestiona la tienda.'),
                 ('¿Cómo desbloqueo los otros mundos?',
                  'Los mundos se van habilitando con el progreso. Ahora mismo hay dos disponibles y '
                  'el resto llegarán en próximas actualizaciones.'),
@@ -270,7 +279,7 @@ PROYECTOS = [
             'trata_datos_personales': False,
             'trata_sensibles': False,
             'tiene_cuenta': False,
-            'tiene_compras': False,
+            'tiene_compras': True,
             'tiene_publicidad': False,
             'edad_minima': None,
             'datos': [
@@ -287,11 +296,12 @@ PROYECTOS = [
                 ('Google Play / App Store', 'Distribuir la aplicación y sus actualizaciones.'),
             ],
             'descargo_titulo': 'Monedas y objetos del juego',
-            'descargo': 'Las monedas, cofres, piezas y cualquier otro objeto del juego son '
-                        '<strong>elementos virtuales sin valor monetario real</strong>. No se pueden '
-                        'canjear por dinero, no son transferibles fuera del juego y no constituyen '
-                        'propiedad ni saldo a favor. Podemos ajustar la economía del juego —precios, '
-                        'recompensas y probabilidades— en futuras actualizaciones.',
+            'descargo': 'Las monedas, gemas, cofres, piezas y cualquier otro objeto del juego son '
+                        '<strong>elementos virtuales sin valor monetario real</strong>, aunque algunos '
+                        'puedan adquirirse con dinero. No se pueden canjear por dinero, no son '
+                        'transferibles fuera del juego y no constituyen propiedad ni saldo a favor. '
+                        'Podemos ajustar la economía del juego —precios y recompensas— en futuras '
+                        'actualizaciones. No hay cajas de botín ni mecánicas de azar con dinero real.',
             'reglas_uso': [
                 'No uses trucos, modificaciones del cliente ni herramientas automatizadas para alterar el progreso o el ranking.',
                 'El ranking es local a tu dispositivo: no compite contra otras personas ni se envía a ningún servidor.',
@@ -1087,7 +1097,7 @@ def pagina_privacidad(p):
         deliberadamente sus datos. Si eres madre, padre o tutor y crees que un menor a tu cargo
         nos ha facilitado información, escríbenos y la eliminaremos.
       </p>"""
-    elif not L['trata_datos_personales']:
+    elif not L['trata_datos_personales'] and not L['tiene_compras']:
         # Sin recogida de datos personales no hay edad que restringir, y conviene
         # decir por qué: es justo lo que revisan las tiendas al clasificar el público.
         menores = """      <p>
