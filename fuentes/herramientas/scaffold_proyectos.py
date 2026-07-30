@@ -227,9 +227,9 @@ PROYECTOS = [
         'prensa': {
             'categoria': 'Juegos · Arcade',
             'idiomas': 'Español e inglés',
-            'precio': 'Gratuita, con compras opcionales dentro de la aplicación '
-                      '(gemas, packs cosméticos y suscripción VIP). '
-                      '<span class="pendiente">[CONFIRMAR QUÉ SALE ACTIVO EN LA v1]</span>',
+            'precio': 'Gratuita, con compras opcionales: gemas desde USD 1,99, pack '
+                      'cosmético USD 3,99 y suscripción Club VIP USD 4,99 al mes. '
+                      'Nada de eso es necesario para jugar.',
             'corta': 'Diseña tu minifigura de bloques y corre con ella esquivando jefes.',
             'media': 'Run For Win combina un editor de personajes de bloques con un endless runner '
                      'pseudo-3D de tres carriles y peleas contra jefes al final de cada mundo. '
