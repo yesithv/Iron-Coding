@@ -1081,7 +1081,32 @@ def pagina_privacidad(p):
       </div>
 '''
 
-    edad = L['edad_minima'] or '<span class="pendiente">[EDAD]</span>'
+    if L['edad_minima']:
+        menores = f"""      <p>
+        Esta aplicación no está dirigida a menores de {L['edad_minima']} años y no recogemos
+        deliberadamente sus datos. Si eres madre, padre o tutor y crees que un menor a tu cargo
+        nos ha facilitado información, escríbenos y la eliminaremos.
+      </p>"""
+    elif not L['trata_datos_personales']:
+        # Sin recogida de datos personales no hay edad que restringir, y conviene
+        # decir por qué: es justo lo que revisan las tiendas al clasificar el público.
+        menores = """      <p>
+        <strong>Esta aplicación no tiene edad mínima de uso.</strong> No pide registro, no
+        recoge ningún dato personal, no incluye publicidad ni rastreadores, y todo el progreso
+        se guarda en el propio dispositivo. No hay, por tanto, datos de menores que podamos
+        recoger, ni deliberadamente ni por accidente.
+      </p>
+      <p>
+        Si en el futuro añadimos alguna función que recoja datos, revisaremos esta sección y la
+        clasificación por edades de la ficha de la tienda antes de publicarla.
+      </p>"""
+    else:
+        menores = """      <p>
+        <span class="pendiente">[EDAD MÍNIMA POR DEFINIR AL PUBLICAR ESTA APP]</span>
+        Si eres madre, padre o tutor y crees que un menor a tu cargo nos ha facilitado
+        información, escríbenos y la eliminaremos.
+      </p>"""
+
 
     n = 5 if not L['trata_sensibles'] else 6  # numeración a partir de sensibles
 
@@ -1100,7 +1125,7 @@ def pagina_privacidad(p):
   <section class="section wrap">
     <div class="prose">
 
-      <p class="prose__updated">Última actualización: <span class="pendiente">[FECHA DE PUBLICACIÓN]</span></p>
+      <p class="prose__updated">Última actualización: 29 de julio de 2026</p>
 
       <div class="aviso">
         <p>
@@ -1117,7 +1142,7 @@ def pagina_privacidad(p):
       <h2 id="responsable">1. Quién responde por tus datos</h2>
       <p>
         El responsable del tratamiento es <strong>Yesith Valencia</strong>, persona natural,
-        con domicilio en <span class="pendiente">[DIRECCIÓN Y CIUDAD]</span>, Colombia, que
+        con domicilio en Bogotá D.C., Colombia, que
         ejerce su actividad bajo la marca <strong>Iron-Coding</strong>.
       </p>
       <p>
@@ -1203,11 +1228,7 @@ def pagina_privacidad(p):
       </p>
 
       <h2 id="menores">{n + 3}. Menores de edad</h2>
-      <p>
-        Esta aplicación no está dirigida a menores de {edad} años y no recogemos deliberadamente
-        sus datos. Si eres madre, padre o tutor y crees que un menor a tu cargo nos ha facilitado
-        información, escríbenos y la eliminaremos.
-      </p>
+{menores}
 
       <h2 id="seguridad">{n + 4}. Seguridad</h2>
       <p>
@@ -1303,7 +1324,7 @@ def pagina_terminos(p):
   <section class="section wrap">
     <div class="prose">
 
-      <p class="prose__updated">Última actualización: <span class="pendiente">[FECHA DE PUBLICACIÓN]</span></p>
+      <p class="prose__updated">Última actualización: 29 de julio de 2026</p>
 
       <div class="aviso">
         <p>
@@ -1322,7 +1343,7 @@ def pagina_terminos(p):
       <h2 id="quienes">2. Quién presta el servicio</h2>
       <p>
         {nombre} es una aplicación de <strong>Yesith Valencia</strong>, persona natural, con
-        domicilio en <span class="pendiente">[DIRECCIÓN Y CIUDAD]</span>, Colombia, que ejerce
+        domicilio en Bogotá D.C., Colombia, que ejerce
         su actividad bajo la marca <strong>Iron-Coding</strong>.
       </p>
 
@@ -1404,7 +1425,7 @@ def pagina_terminos(p):
       <h2 id="ley">12. Ley aplicable</h2>
       <p>
         Estos términos se rigen por las leyes de <strong>Colombia</strong>. Cualquier
-        controversia se someterá a los jueces de <span class="pendiente">[CIUDAD]</span>, Colombia, sin
+        controversia se someterá a los jueces de Bogotá D.C., Colombia, sin
         perjuicio del fuero que corresponda de forma imperativa a las personas consumidoras en su
         lugar de residencia. Si una cláusula resultara inválida, las demás seguirán vigentes.
       </p>
