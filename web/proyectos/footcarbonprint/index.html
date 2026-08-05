@@ -70,28 +70,31 @@
     <div class="proyecto__grid">
       <div class="proyecto__texto">
         <p>El problema de las calculadoras de huella de carbono no es medir: es que el resultado no le dice nada a nadie. FootCarbonPrint traduce las toneladas de CO₂ en imágenes que sí se entienden —«tu impacto equivale a talar 70 árboles al año»— y entrega un plan de acción ordenado por impacto real, con el ahorro estimado de cada cambio.</p>
-        <p>El test se responde deslizando y tocando, nunca escribiendo: seis módulos independientes, un máximo de 35 preguntas y valores por defecto inteligentes para quien no conoce sus consumos exactos. Los factores de emisión están calibrados por país, porque la red eléctrica colombiana (0,175 kgCO₂/kWh, mayoritariamente hidroeléctrica) no se parece en nada a la alemana.</p>
+        <p>El test se responde deslizando y tocando, nunca escribiendo: seis módulos independientes con valores por defecto inteligentes para quien no conoce sus consumos exactos, y una vista previa del CO₂ que se recalcula al mover cada control. Un selector de país ajusta el factor de la red eléctrica, porque la colombiana (0,175 kgCO₂/kWh, mayoritariamente hidroeléctrica) no se parece en nada a la alemana.</p>
 
         <ul class="proyecto__features">
-          <li><strong>Seis módulos de test</strong> — transporte, alimentación, hogar y energía, consumo, residuos y agua.</li>
-          <li><strong>Motor de cálculo con fuentes verificables</strong> : IPCC, EPA, GHG Protocol, DEFRA, ICAO y estudios revisados por pares.</li>
-          <li><strong>Equivalencias visuales</strong> que convierten toneladas en árboles, bombillas o cargas de teléfono.</li>
-          <li><strong>Comparativa contextual</strong> frente al promedio de Colombia, el mundial y la meta de París 2050.</li>
-          <li><strong>Plan de acción personalizado</strong> con las cinco medidas de mayor impacto, su dificultad y su reducción estimada.</li>
-          <li><strong>Gamificación</strong> — EcoPoints, niveles, medallas y retos semanales.</li>
-          <li><strong>Modo offline</strong> básico: los datos son sensibles y el uso sin conexión es una opción de primera clase.</li>
+          <li><strong>Seis módulos de test</strong> — transporte, alimentación, hogar y energía, consumo, residuos y agua, con selector de país entre diez opciones.</li>
+          <li><strong>Motor de cálculo con fuentes verificables</strong> : IPCC, EPA, GHG Protocol, DEFRA, ICAO y estudios revisados por pares (Poore &amp; Nemecek).</li>
+          <li><strong>Resultados con equivalencias visuales</strong> — árboles, bombillas o cargas de teléfono— y comparativa frente a Colombia, el mundo y la meta de París.</li>
+          <li><strong>Dashboard e historial</strong> con desglose en dona por categoría y evolución de tu huella en el tiempo.</li>
+          <li><strong>Plan de acción personalizado</strong> con las medidas de mayor impacto según tus datos, su dificultad y su reducción estimada.</li>
+          <li><strong>Gamificación completa</strong> — EcoPoints, cinco niveles, ocho medallas y retos semanales.</li>
+          <li><strong>Guía educativa</strong> de seis lecciones y <strong>calculadora de compensación</strong> (árboles y costo para neutralizar).</li>
+          <li><strong>Eco Card compartible</strong>, exportación a imagen, cinco idiomas y funcionamiento <strong>100% offline y local</strong>, sin cuenta.</li>
         </ul>
 
         <div class="ficha">
           <dl>
             <dt>Estado</dt>
-            <dd>Especificación funcional cerrada y desarrollo activo del MVP. Aún no disponible al público.</dd>
-            <dt>Plataformas previstas</dt>
-            <dd>Android, iOS y web</dd>
+            <dd>Versión 1.0.0 · beta funcional completa. La app ya hace todo el circuito de uso; aún no publicada en tiendas.</dd>
+            <dt>Plataformas</dt>
+            <dd>Android, iOS y web; hoy desplegada como demo web</dd>
             <dt>Stack</dt>
-            <dd>Flutter · Spring Boot · PostgreSQL · Firebase Auth · ML Kit para OCR de facturas</dd>
+            <dd>Flutter · provider · fl_chart · shared_preferences. Sin backend: 100% local-first</dd>
+            <dt>Idiomas</dt>
+            <dd>Cinco — español, inglés, francés, portugués y alemán</dd>
             <dt>Contexto</dt>
-            <dd>Factores de emisión calibrados para Colombia, actualizables por región sin redesplegar</dd>
+            <dd>Factores de emisión por país seleccionable en tiempo de ejecución (diez opciones, Colombia por defecto)</dd>
           </dl>
         </div>
 
@@ -118,6 +121,34 @@
       </div>
     </div>
   </article>
+
+  <section class="section wrap" aria-labelledby="alcance-footcarbonprint">
+    <p class="eyebrow">// alcance y hoja de ruta</p>
+    <h2 class="section__title" id="alcance-footcarbonprint">Del MVP a lo que viene.</h2>
+    <div class="doble-ficha">
+      <div class="ficha ficha--bloque">
+        <p class="eyebrow ficha__eyebrow">// alcance del MVP</p>
+        <p class="ficha__intro">La versión 1.0.0 ya construida es bastante más que «una calculadora»: es un producto completo, <strong>100% offline y sin cuenta</strong>, con todo el circuito de uso resuelto:</p>
+        <ul class="proyecto__features ficha__lista">
+          <li>Test de seis módulos, motor de cálculo con selector de país y pantalla de resultados con Top-3 de fuentes.</li>
+          <li>Dashboard, historial de mediciones y plan de acción personalizado con compromisos.</li>
+          <li>Gamificación (puntos, niveles y medallas), retos semanales y guía educativa de seis lecciones.</li>
+          <li>Calculadora de compensación, Eco Card compartible, tema claro/oscuro y cinco idiomas.</li>
+        </ul>
+        <p class="ficha__intro">Quedan como detalles parciales el medidor de emisiones en tiempo real, la imagen exportada con paleta e idioma fijos y una auditoría completa de accesibilidad.</p>
+      </div>
+      <div class="ficha ficha--bloque">
+        <p class="eyebrow ficha__eyebrow">// versión 2 · hoja de ruta</p>
+        <p class="ficha__intro">El roadmap apunta a la automatización pasiva y a lo social; hoy la app no tiene backend y esa es la gran pieza pendiente:</p>
+        <ul class="proyecto__features ficha__lista">
+          <li><strong>OCR de facturas</strong> de luz y gas y <strong>seguimiento por GPS</strong> del transporte, para medir sin teclear.</li>
+          <li><strong>Notificaciones eco-inteligentes</strong> y componente social con retos grupales.</li>
+          <li><strong>Panel de administración por región</strong> para actualizar factores, integración con apps bancarias y versión empresarial/ESG.</li>
+          <li><strong>Backend</strong> (Spring Boot · PostgreSQL · Firebase) que hoy es arquitectura objetivo, aún sin construir; cualquier función de nube será opcional.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <section class="section wrap" id="lista-espera" aria-labelledby="titulo-lista-footcarbonprint">
     <p class="eyebrow">// todavía no está publicada</p>

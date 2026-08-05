@@ -77,21 +77,26 @@
           <li><strong>Personajes precargados</strong> agrupados por colección, que sirven de punto de partida y se pueden modificar.</li>
           <li><strong>Motor Flame</strong> con perspectiva pseudo-3D, tres carriles, salto y deslizamiento, y tres zonas de dificultad progresiva.</li>
           <li><strong>Peleas contra jefes</strong> temáticos al cierre de cada mundo.</li>
-          <li><strong>Economía y progresión</strong> — monedas, ruleta diaria, cofres, desbloqueo de piezas por rareza y misiones rotativas.</li>
-          <li><strong>Ocho mundos</strong> con paletas y jefes propios, dos disponibles y el resto bloqueados.</li>
-          <li><strong>Audio completo</strong> — efectos y música de fondo seleccionable por personaje.</li>
+          <li><strong>Economía completa</strong> — monedas, gemas, ruleta diaria, cofres común y VIP, wallet y desbloqueo de piezas por rareza.</li>
+          <li><strong>Tres misiones rotativas</strong> que al completarse pagan monedas de verdad y regalan una gema, como fuente gratuita de premium.</li>
+          <li><strong>Club VIP real</strong> — gemas diarias reclamables y multiplicador ×1,5 de monedas en carrera, además de cosméticos exclusivos por gemas.</li>
+          <li><strong>Ocho mundos</strong> con paletas y jefes propios, dos disponibles y el resto bloqueados por monedas.</li>
+          <li><strong>Audio completo</strong> — efectos y música de fondo temática seleccionable antes de correr.</li>
+          <li><strong>Seis idiomas</strong> y analítica first-party guardada solo en el dispositivo, sin SDK de terceros.</li>
         </ul>
 
         <div class="ficha">
           <dl>
             <dt>Estado</dt>
-            <dd>Jugable, con demo web pública. Pendiente de publicación en tiendas.</dd>
+            <dd>Versión 1.0.0 · MVP v1 en preparación para Google Play. Jugable, con demo web pública (compras simuladas); pendiente de publicación en tiendas.</dd>
             <dt>Plataformas</dt>
-            <dd>Android, iOS y web</dd>
+            <dd>Android primero, iOS después; la web es demo/escaparate</dd>
             <dt>Stack</dt>
-            <dd>Flutter · Flame · flutter_bloc · Hive · go_router · get_it</dd>
+            <dd>Flutter · Flame · flutter_bloc · Hive · go_router · get_it · in_app_purchase</dd>
+            <dt>Monetización</dt>
+            <dd>Solo compras integradas, sin anuncios. Kids-safe: compuerta parental, sin loot boxes con dinero real, sin pay-to-win</dd>
             <dt>Arquitectura</dt>
-            <dd>Clean Architecture por funcionalidad, con las tres capas en cada una</dd>
+            <dd>Clean Architecture por funcionalidad, con las tres capas en cada una y sin dependencias de red</dd>
           </dl>
         </div>
 
@@ -123,6 +128,34 @@
       </div>
     </div>
   </article>
+
+  <section class="section wrap" aria-labelledby="alcance-run-for-win">
+    <p class="eyebrow">// alcance y hoja de ruta</p>
+    <h2 class="section__title" id="alcance-run-for-win">Del MVP a lo que viene.</h2>
+    <div class="doble-ficha">
+      <div class="ficha ficha--bloque">
+        <p class="eyebrow ficha__eyebrow">// alcance del MVP</p>
+        <p class="ficha__intro">El MVP v1 es una app <strong>jugable y descargable en Google Play, totalmente autónoma</strong>, con pagos reales. Su rasgo definitorio es que no depende de ningún servidor:</p>
+        <ul class="proyecto__features ficha__lista">
+          <li>La app no hace ninguna petición de red: sin backend, sin Firebase, sin SDK de terceros.</li>
+          <li>Personajes, monedas, misiones, entitlements y ranking viven en Hive, en el dispositivo.</li>
+          <li>Sin registro ni cuentas; el ranking es por dispositivo y la analítica nunca sale de él.</li>
+          <li>Pagos reales vía Google Play Billing; sin anuncios en ninguna plataforma.</li>
+        </ul>
+        <p class="ficha__intro">Fuera del MVP: validación de recibos en servidor, control del vencimiento de la suscripción y sincronización entre dispositivos. Lo que resta para publicar son pasos de tienda (alta de productos, política de privacidad, keystore, rediseño del estilo visual), no código.</p>
+      </div>
+      <div class="ficha ficha--bloque">
+        <p class="eyebrow ficha__eyebrow">// versión 2 · hoja de ruta</p>
+        <p class="ficha__intro">Con el MVP en la calle, el roadmap documentado añade profundidad sin romper la autonomía del juego:</p>
+        <ul class="proyecto__features ficha__lista">
+          <li><strong>Backend y API de validación de pagos</strong> — recibos verificados en servidor, vencimiento real de la suscripción, ranking global y analítica agregada.</li>
+          <li><strong>Pase de temporada</strong> con cosméticos estacionales.</li>
+          <li><strong>Cosméticos <em>legendary</em> comprables con monedas</strong>, como techo a la progresión gratuita.</li>
+          <li><strong>Vuelta a cuatro pistas de música por mundo</strong> (hoy son dos), con los nuevos temas ya guardados.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <section class="section wrap" id="lista-espera" aria-labelledby="titulo-lista-run-for-win">
     <p class="eyebrow">// todavía no está publicada</p>
