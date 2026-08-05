@@ -78,20 +78,21 @@
           <li><strong>Historial clínico integrado</strong> en una línea de tiempo con filtros por tipo y rango de fechas.</li>
           <li><strong>Documentos adjuntos</strong> con galería, filtro por tipo y compresión automática de imágenes.</li>
           <li><strong>Recordatorios locales</strong> del día, vencidos y anticipados, respetando el límite de notificaciones de iOS.</li>
-          <li><strong>Reporte veterinario en PDF</strong> con selección de contenido y hoja de compartir nativa.</li>
-          <li><strong>Respaldo y portabilidad</strong> — exportar e importar en JSON, con opción de reemplazar o combinar.</li>
+          <li><strong>Reporte veterinario en PDF</strong> con selección de contenido y hoja de compartir nativa; indicador de cumplimiento por mascota.</li>
+          <li><strong>Respaldo y portabilidad</strong> — exportar e importar en JSON, con opción de reemplazar o combinar por identificador.</li>
+          <li><strong>Privacidad local</strong> — cifrado en reposo con SQLCipher, bloqueo biométrico opcional y «borrar todos mis datos».</li>
         </ul>
 
         <div class="ficha">
           <dl>
             <dt>Estado</dt>
-            <dd>MVP de fase 1 funcionalmente completo, con demo web pública. Pendiente el cifrado en reposo y la publicación en tiendas.</dd>
+            <dd>Versión 0.1.0 · MVP de fase 1 funcionalmente completo en código, con demo web pública. Pendiente la validación en dispositivo y la publicación en tiendas.</dd>
             <dt>Plataformas</dt>
-            <dd>Android, iOS y web</dd>
+            <dd>Android (proyecto nativo listo), iOS por generar y web como demo</dd>
             <dt>Stack</dt>
             <dd>Flutter · Riverpod · Clean Architecture con patrón repositorio</dd>
             <dt>Datos</dt>
-            <dd>Local-first, sin backend. Preparado para sincronizar en la fase 2 sin migraciones destructivas</dd>
+            <dd>Local-first, sin backend, con SQLite cifrado (SQLCipher). Preparado para sincronizar en la fase 2 sin migraciones destructivas</dd>
           </dl>
         </div>
 
@@ -115,6 +116,35 @@
       </div>
     </div>
   </article>
+
+  <section class="section wrap" aria-labelledby="alcance-pituapp">
+    <p class="eyebrow">// alcance y hoja de ruta</p>
+    <h2 class="section__title" id="alcance-pituapp">Del MVP a lo que viene.</h2>
+    <div class="doble-ficha">
+      <div class="ficha ficha--bloque">
+        <p class="eyebrow ficha__eyebrow">// alcance del MVP</p>
+        <p class="ficha__intro">La fase 1 es <strong>local-first, sin backend ni login</strong>: los datos viven en el dispositivo, con planes Free y Pro. El núcleo funcional está completo en código —no quedan huecos— e incluye:</p>
+        <ul class="proyecto__features ficha__lista">
+          <li>Gestión de mascotas, catálogo de cuidados por especie y ejecución con recálculo automático de fechas.</li>
+          <li>Historial clínico (visitas, vacunas, diagnósticos y peso) en línea de tiempo con filtros.</li>
+          <li>Recordatorios locales fiables, cumplimiento por mascota y reporte veterinario en PDF.</li>
+          <li>Respaldo JSON, cifrado en reposo, bloqueo biométrico y planes Free/Pro con compra integrada.</li>
+        </ul>
+        <p class="ficha__intro">Lo que resta no son funciones sino publicación: validar en dispositivo, firma y AAB de Android, generar el proyecto de iOS y los recursos y formularios de tienda.</p>
+      </div>
+      <div class="ficha ficha--bloque">
+        <p class="eyebrow ficha__eyebrow">// versión 2 · hoja de ruta</p>
+        <p class="ficha__intro">La fase 2 añade backend <strong>manteniendo el funcionamiento offline</strong>, con un plan Premium por suscripción:</p>
+        <ul class="proyecto__features ficha__lista">
+          <li><strong>Cuenta</strong> (correo, Google o Apple) con migración sin pérdida de los datos locales.</li>
+          <li><strong>Hogar compartido</strong> — varios miembros acceden a las mismas mascotas e historial, con feed de actividad.</li>
+          <li><strong>Sincronización en la nube</strong> multidispositivo, conservando el uso sin conexión.</li>
+          <li><strong>Enlace de solo lectura para el veterinario</strong>, temporal y revocable.</li>
+        </ul>
+        <p class="ficha__intro">Stack previsto: Spring Boot · PostgreSQL · almacenamiento S3 · notificaciones push, con validación de recibos en servidor y cifrado en tránsito y en reposo.</p>
+      </div>
+    </div>
+  </section>
 
   <section class="section wrap" id="lista-espera" aria-labelledby="titulo-lista-pituapp">
     <p class="eyebrow">// todavía no está publicada</p>

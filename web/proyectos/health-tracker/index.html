@@ -74,13 +74,14 @@
         <p>Es local-first de verdad: todo se guarda en SQLite en el dispositivo y la app es plenamente usable sin red. La sincronización con la API es bidireccional y solo marca un registro como sincronizado si el servidor confirma, de modo que un fallo de red nunca pierde datos.</p>
 
         <ul class="proyecto__features">
-          <li><strong>Cuatro familias de indicadores</strong> signos vitales, antropometría con seis perímetros corporales, perfil lipídico y composición corporal.</li>
-          <li><strong>Semáforo clínico</strong> por indicador, con cortes de fábrica como respaldo cuando no hay red.</li>
-          <li><strong>Historiales con gráficas</strong> de evolución y bandas de referencia dibujadas sobre la curva.</li>
-          <li><strong>Exportación a PDF y CSV</strong> con compartido nativo desde cada pestaña.</li>
-          <li><strong>Cinco idiomas</strong> (español, inglés, portugués, italiano y alemán) y unidades métricas o imperiales.</li>
-          <li><strong>Dos temas completos</strong> — Pulso Clínico y Consulta Serena — sobre un vocabulario de tokens semánticos.</li>
-          <li><strong>Copia de seguridad</strong> completa en JSON, biometría opcional y recordatorios diarios.</li>
+          <li><strong>Cuatro familias de indicadores</strong> signos vitales, antropometría con seis perímetros corporales, perfil lipídico y composición corporal, cada uno con dispositivo de medición asociado.</li>
+          <li><strong>Selector de laboratorio</strong> en el perfil lipídico: cada examen se interpreta con los rangos del laboratorio donde se tomó.</li>
+          <li><strong>Semáforo clínico</strong> por indicador, resuelto en el servidor por dispositivo, sexo y edad, con cortes de fábrica como respaldo cuando no hay red.</li>
+          <li><strong>Historiales con gráficas</strong> de evolución y bandas de referencia dibujadas sobre la curva, con exportación a PDF y CSV y compartido nativo.</li>
+          <li><strong>Cuenta con alta diferida</strong> — si no hay red durante el registro, el paciente entra igual y la cuenta se crea en el primer arranque con conexión.</li>
+          <li><strong>Sección «Descubre»</strong> con artículos, rutinas, retos y consejos de salud servidos local-first en los cinco idiomas.</li>
+          <li><strong>Cinco idiomas</strong> (español, inglés, portugués, italiano y alemán), unidades métricas o imperiales y dos temas completos con contraste AA verificado por tests.</li>
+          <li><strong>Copia de seguridad</strong> completa en JSON, biometría opcional, recordatorios diarios y un modo demostración con dos años de datos.</li>
         </ul>
 
         <div class="ficha">
@@ -125,6 +126,34 @@
       </div>
     </div>
   </article>
+
+  <section class="section wrap" aria-labelledby="alcance-health-tracker">
+    <p class="eyebrow">// alcance y hoja de ruta</p>
+    <h2 class="section__title" id="alcance-health-tracker">Del MVP a lo que viene.</h2>
+    <div class="doble-ficha">
+      <div class="ficha ficha--bloque">
+        <p class="eyebrow ficha__eyebrow">// alcance del MVP</p>
+        <p class="ficha__intro">La primera versión (Fase 0) es una app <strong>funcionalmente completa de punta a punta</strong>, integrada con la API de rangos clínicos. Se considera «hecho» todo el circuito de uso real:</p>
+        <ul class="proyecto__features ficha__lista">
+          <li>Alta de paciente y captura de las cuatro familias de indicadores.</li>
+          <li>Interpretación clínica con semáforo, historiales con gráficas y exportación a PDF y CSV.</li>
+          <li>Sincronización bidireccional que solo marca un registro como sincronizado si el servidor confirma.</li>
+          <li>Contenidos, ajustes, copia de seguridad, cinco idiomas y dos temas.</li>
+        </ul>
+        <p class="ficha__intro">Lo que queda es sustituir los andamios de autenticación de la Fase 0 (verificación de desarrollo, identidad por cabecera) por sus piezas definitivas: <strong>OTP de Firebase y token JWT</strong>.</p>
+      </div>
+      <div class="ficha ficha--bloque">
+        <p class="eyebrow ficha__eyebrow">// versión 2 · hoja de ruta</p>
+        <p class="ficha__intro"><strong>Versión 2 — por definir.</strong> El repositorio aún no documenta un alcance de versión 2 de producto; está pendiente de definir.</p>
+        <p class="ficha__intro">Lo que sí está previsto a corto plazo es el salto técnico de <strong>Fase 0 → Fase 1</strong>, centrado en autenticación real y en conectar piezas ya andamiadas:</p>
+        <ul class="proyecto__features ficha__lista">
+          <li>Autenticación real con OTP de Firebase (SMS/email) y JWT, en lugar de la verificación de desarrollo.</li>
+          <li>Feed de «Descubre» servido desde la API, en vez de las semillas empaquetadas.</li>
+          <li>Bajada completa desde el servidor de signos vitales y perfil lipídico (hoy solo suben).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <section class="section wrap" id="lista-espera" aria-labelledby="titulo-lista-health-tracker">
     <p class="eyebrow">// todavía no está publicada</p>
